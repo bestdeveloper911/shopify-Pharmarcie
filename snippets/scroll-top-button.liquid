@@ -1,0 +1,10 @@
+{% if settings.show_scroll_top_button %}
+<div id="scroll-to-top-target" class="w-0 h-0 invisible opacity-0"></div>
+<button 
+  id="scroll-to-top-button" 
+  class="sf__btn sf__btn-primary rounded-full fixed z-50 bottom-[86px] right-4 opacity-0 transition-opacity" 
+  style="padding: 12px; border-radius: 100%;"
+>
+  {% render 'icon', name: 'arrow-up', size: 'medium' %}
+</button>
+{% endif %}

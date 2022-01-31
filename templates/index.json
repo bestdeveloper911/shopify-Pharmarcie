@@ -1,0 +1,741 @@
+{
+  "sections": {
+    "1621243260e1af0c20": {
+      "type": "slider",
+      "blocks": {
+        "ffd9937a-7436-4035-a75b-09c1a235c821": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify:\/\/shop_images\/FB9pYGVQ_fe78e22d-43b1-4880-9c7a-6967a30df886.jpg",
+            "image_alignment": "center middle",
+            "content_in_container": false,
+            "content_position": "center middle",
+            "text_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "shopify:\/\/collections\/avene",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "",
+            "footer_button": "",
+            "footer_link": ""
+          }
+        },
+        "f1aa4d6b-a81a-42b1-a667-a33e19cfd2ed": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify:\/\/shop_images\/GZgRJcsA.png",
+            "image_alignment": "center middle",
+            "content_in_container": false,
+            "content_position": "center bottom",
+            "text_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "shopify:\/\/collections\/weleda",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "",
+            "footer_button": "",
+            "footer_link": ""
+          }
+        },
+        "576cfd44-be15-48ac-9079-32e8e6423a67": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify:\/\/shop_images\/1OnIt5ig.jpg",
+            "image_alignment": "center top",
+            "content_in_container": false,
+            "content_position": "center middle",
+            "text_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "shopify:\/\/collections\/herbesan",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "",
+            "footer_button": "",
+            "footer_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "ffd9937a-7436-4035-a75b-09c1a235c821",
+        "f1aa4d6b-a81a-42b1-a667-a33e19cfd2ed",
+        "576cfd44-be15-48ac-9079-32e8e6423a67"
+      ],
+      "settings": {
+        "container": "w-full",
+        "slideshow_height": "small",
+        "show_overlay": false,
+        "dots_position": "right",
+        "dots_color": "dark",
+        "show_dots": true,
+        "show_arrows": false,
+        "autorotate": true,
+        "autorotate_speed": 4,
+        "custom_class": ""
+      }
+    },
+    "16225125199f82d8fe": {
+      "type": "icon-box",
+      "blocks": {
+        "16225125199f82d8fe-0": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/delivery.png",
+            "title": "FREE SHIPPING",
+            "description": "<p>For all orders over $100<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "16225125199f82d8fe-1": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/skincare.png",
+            "title": "+700 BRANDS",
+            "description": "<p>Available<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "16225125199f82d8fe-2": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/speech-bubble.png",
+            "title": "ONLINE SUPPORT",
+            "description": "<p>From experts<\/p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "16225125199f82d8fe-0",
+        "16225125199f82d8fe-1",
+        "16225125199f82d8fe-2"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "#f8f8f8",
+        "item_per_row": 3,
+        "item_gap": 50,
+        "item_gap_mobile": 10,
+        "card_style": "horizontal",
+        "image_max_width": "40px",
+        "content_alignment": "center",
+        "hover_effect": "none",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": true,
+        "use_grid_column_mb": false,
+        "custom_class": ""
+      }
+    },
+    "16401949032ae6ee88": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "FAST ITEMS",
+        "subheading": "",
+        "description": "Selected products that are available for express delivery in 3 days",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "#ffffff",
+        "collection": "deal-of-the-day",
+        "product_to_show": 12,
+        "items_per_row": 5,
+        "item_gap": 38,
+        "pcard_layout": "3",
+        "pcard_image_ratio": "",
+        "show_vendor": true,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": true,
+        "button_type": "link",
+        "button_text": "View All",
+        "button_style": "sf__btn-primary",
+        "button_size": "sf__btn-small",
+        "infinite_load": false,
+        "max_page_load": 3,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "custom_class": ""
+      }
+    },
+    "164019107042a00f2c": {
+      "type": "blog-posts",
+      "settings": {
+        "heading": "JINA'S BLOG",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "#f8f8f8",
+        "blog": "news",
+        "limit": 4,
+        "column": 4,
+        "column_gap": 28,
+        "mobile_gap": 6,
+        "article_image_aspect_ratio": "original",
+        "article_align_content": "text-center",
+        "article_show_tags": false,
+        "article_show_date": true,
+        "article_show_excerpt": false,
+        "article_show_button": false,
+        "button_link": "shopify:\/\/blogs\/news",
+        "button_text": "read more",
+        "button_style": "sf__btn-primary",
+        "button_size": "sf__btn-small",
+        "use_scroll_mobile": true,
+        "custom_class": ""
+      }
+    },
+    "16427218850a9def4e": {
+      "type": "icon-box",
+      "blocks": {
+        "164272188548575bb5-0": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bioderma_8273bfbc-b0d2-4eda-ab38-b2746abcaafb.png",
+            "title": "BIODERMA",
+            "description": "",
+            "link": "shopify:\/\/collections\/bioderma",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "164272188548575bb5-1": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cerave_ffb46d07-1ceb-4e2f-92af-ae9f92b7bb00.png",
+            "title": "CERAVE",
+            "description": "",
+            "link": "shopify:\/\/collections\/cerave",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "164272188548575bb5-2": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aderma_8801c08d-39c3-4e0e-9af5-09687755de72.png",
+            "title": "A-DERMA",
+            "description": "",
+            "link": "shopify:\/\/collections\/a-derma",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        },
+        "6661a96c-6245-408f-9df2-f36795d55310": {
+          "type": "iconbox",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vichy.png",
+            "title": "VICHY",
+            "description": "",
+            "link": "shopify:\/\/collections\/vichy",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "164272188548575bb5-0",
+        "164272188548575bb5-1",
+        "164272188548575bb5-2",
+        "6661a96c-6245-408f-9df2-f36795d55310"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "#f5f5f5",
+        "item_per_row": 4,
+        "item_gap": 8,
+        "item_gap_mobile": 6,
+        "card_style": "vertical",
+        "image_max_width": "180px",
+        "content_alignment": "center",
+        "hover_effect": "scaling-up",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": true,
+        "use_grid_column_mb": false,
+        "custom_class": ""
+      }
+    },
+    "164190227308998835": {
+      "type": "image-with-text-1",
+      "disabled": true,
+      "blocks": {
+        "164190227387d41a06-0": {
+          "type": "item",
+          "settings": {
+            "content_position": "center_center",
+            "content_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "image": "shopify:\/\/shop_images\/NAIL_24d9eb65-b1fb-4aac-98e2-5c43c50ae587.jpg",
+            "link": "shopify:\/\/collections\/nails",
+            "title": "",
+            "subtitle": "",
+            "button_label": "nail care",
+            "button_style": "sf__btn-primary",
+            "button_size": ""
+          }
+        },
+        "bba4a775-fba4-4413-aabf-90f64cacb32b": {
+          "type": "item",
+          "settings": {
+            "content_position": "center_center",
+            "content_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "image": "shopify:\/\/shop_images\/PERFUME_99e8df92-7320-4593-b2ed-46731abe1060.jpg",
+            "link": "shopify:\/\/collections\/fragrances",
+            "title": "",
+            "subtitle": "",
+            "button_label": "FRAGRANCES",
+            "button_style": "sf__btn-primary",
+            "button_size": ""
+          }
+        },
+        "164190227387d41a06-1": {
+          "type": "item",
+          "settings": {
+            "content_position": "center_center",
+            "content_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "image": "shopify:\/\/shop_images\/VITAMINS.jpg",
+            "link": "shopify:\/\/collections\/food-supplements",
+            "title": "",
+            "subtitle": "",
+            "button_label": "FOOD SUPPLEMENTS",
+            "button_style": "sf__btn-primary",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "164190227387d41a06-0",
+        "bba4a775-fba4-4413-aabf-90f64cacb32b",
+        "164190227387d41a06-1"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "layout": "layout_2",
+        "gap": 30,
+        "use_scroll_mobile": true,
+        "mobile_gap": 10,
+        "custom_class": ""
+      }
+    },
+    "1640193761bd9e707c": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "SPECIAL OFFERS",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "collection": "special-offers",
+        "product_to_show": 12,
+        "items_per_row": 5,
+        "item_gap": 38,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": true,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": true,
+        "button_type": "link",
+        "button_text": "View All",
+        "button_style": "sf__btn-primary",
+        "button_size": "sf__btn-small",
+        "infinite_load": false,
+        "max_page_load": 3,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "custom_class": ""
+      }
+    },
+    "16427227516aec1a30": {
+      "type": "slider",
+      "blocks": {
+        "1642722751e11bf176-1": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify:\/\/shop_images\/ERBORIAN.jpg",
+            "image_alignment": "center middle",
+            "content_in_container": false,
+            "content_position": "center middle",
+            "text_alignment": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "shopify:\/\/collections\/erborian",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "New Collection",
+            "footer_button": "Shop Now",
+            "footer_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1642722751e11bf176-1"
+      ],
+      "settings": {
+        "container": "w-full",
+        "slideshow_height": "small",
+        "show_overlay": false,
+        "dots_position": "bottom",
+        "dots_color": "dark",
+        "show_dots": false,
+        "show_arrows": false,
+        "autorotate": false,
+        "autorotate_speed": 5,
+        "custom_class": ""
+      }
+    },
+    "1641768528106825c7": {
+      "type": "image-with-text-1",
+      "disabled": true,
+      "blocks": {
+        "16417685280844db21-1": {
+          "type": "item",
+          "settings": {
+            "content_position": "bottom_center",
+            "content_alignment": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "image": "shopify:\/\/shop_images\/banner_1.jpg",
+            "link": "",
+            "title": "",
+            "subtitle": "",
+            "button_label": "Shop now",
+            "button_style": "sf__btn-primary",
+            "button_size": "sf__btn-small"
+          }
+        },
+        "16417685280844db21-2": {
+          "type": "item",
+          "settings": {
+            "content_position": "bottom_center",
+            "content_alignment": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "image": "shopify:\/\/shop_images\/banner_2.jpg",
+            "link": "shopify:\/\/collections\/bioderma",
+            "title": "",
+            "subtitle": "",
+            "button_label": "Shop now",
+            "button_style": "sf__btn-primary",
+            "button_size": "sf__btn-small"
+          }
+        },
+        "16417685280844db21-0": {
+          "type": "item",
+          "settings": {
+            "content_position": "bottom_center",
+            "content_alignment": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "image": "shopify:\/\/shop_images\/banner_3.jpg",
+            "link": "",
+            "title": "",
+            "subtitle": "",
+            "button_label": "Shop now",
+            "button_style": "sf__btn-primary",
+            "button_size": "sf__btn-small"
+          }
+        }
+      },
+      "block_order": [
+        "16417685280844db21-1",
+        "16417685280844db21-2",
+        "16417685280844db21-0"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "layout": "layout_2",
+        "gap": 30,
+        "use_scroll_mobile": true,
+        "mobile_gap": 10,
+        "custom_class": ""
+      }
+    },
+    "1640195641050150d4": {
+      "type": "testimonials",
+      "disabled": true,
+      "blocks": {
+        "164019564124ca5aff-0": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Love it so much",
+            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"<\/p>",
+            "footer": "<p>Dean D. US<\/p>",
+            "image": "shopify:\/\/shop_images\/man-6206540_1280.jpg",
+            "image_text": "",
+            "product": ""
+          }
+        },
+        "164019564124ca5aff-1": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Love it so much",
+            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"<\/p>",
+            "footer": "<p>Dean D. US<\/p>",
+            "image": "shopify:\/\/shop_images\/man-6206540_1280.jpg",
+            "image_text": "",
+            "product": ""
+          }
+        },
+        "164019564124ca5aff-2": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Love it so much",
+            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"<\/p>",
+            "footer": "<p>Dean D. US<\/p>",
+            "image": "shopify:\/\/shop_images\/man-6206540_1280.jpg",
+            "image_text": "",
+            "product": ""
+          }
+        },
+        "164019564124ca5aff-3": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Love it so much",
+            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"<\/p>",
+            "footer": "<p>Dean D. US<\/p>",
+            "image_text": "",
+            "product": ""
+          }
+        },
+        "164019564124ca5aff-4": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Love it so much",
+            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"<\/p>",
+            "footer": "<p>Dean D. US<\/p>",
+            "image_text": "",
+            "product": ""
+          }
+        },
+        "164019564124ca5aff-5": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "title": "Love it so much",
+            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"<\/p>",
+            "footer": "<p>Dean D. US<\/p>",
+            "image_text": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "164019564124ca5aff-0",
+        "164019564124ca5aff-1",
+        "164019564124ca5aff-2",
+        "164019564124ca5aff-3",
+        "164019564124ca5aff-4",
+        "164019564124ca5aff-5"
+      ],
+      "settings": {
+        "heading": "What People Are Saying",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "left",
+        "container": "container-fluid",
+        "background_color": "",
+        "design": "testimonials-3",
+        "show_stars": true,
+        "autorotate": true,
+        "show_navigation": true,
+        "show_pagination": false,
+        "star_color": "#188323",
+        "custom_class": ""
+      }
+    },
+    "1640191190d623a4ad": {
+      "type": "brands-list",
+      "blocks": {
+        "a0d94946-5721-40f7-8055-4e465b6589e7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo_uriage_2.jpg",
+            "image_link": "",
+            "max_width": "150px"
+          }
+        },
+        "1640191190819343bb-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rogergallet.jpg",
+            "image_link": "",
+            "max_width": "150px"
+          }
+        },
+        "1780074a-51e7-4a3a-a33f-9d21dfb31b7b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo_bioderma_2.jpg",
+            "image_link": "",
+            "max_width": "150px"
+          }
+        },
+        "1640191190819343bb-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo_avene_2.jpg",
+            "image_link": "",
+            "max_width": "150px"
+          }
+        },
+        "8a44085a-4203-4b10-a9a8-6ffb35e7c101": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo_mustela_2.jpg",
+            "image_link": "",
+            "max_width": "150px"
+          }
+        },
+        "1640191190819343bb-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Caudalie.jpg",
+            "image_link": "",
+            "max_width": "150px"
+          }
+        },
+        "1640191190819343bb-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CeraVe.jpg",
+            "image_link": "",
+            "max_width": "150px"
+          }
+        }
+      },
+      "block_order": [
+        "a0d94946-5721-40f7-8055-4e465b6589e7",
+        "1640191190819343bb-1",
+        "1780074a-51e7-4a3a-a33f-9d21dfb31b7b",
+        "1640191190819343bb-3",
+        "8a44085a-4203-4b10-a9a8-6ffb35e7c101",
+        "1640191190819343bb-0",
+        "1640191190819343bb-2"
+      ],
+      "settings": {
+        "heading": "HEALTH & BEAUTY BRANDS",
+        "subheading": "TOP FRENCH",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "#ffffff",
+        "item_per_row": 7,
+        "enable_slider": true,
+        "autorotate": true,
+        "autorotate_speed": 3,
+        "custom_class": ""
+      }
+    },
+    "1640191086fdc37905": {
+      "type": "newsletter",
+      "settings": {
+        "container": "container",
+        "background_color": "#f5f5f5",
+        "form_layout": "vertical",
+        "form_design": "1",
+        "heading": "Receive the latest deals and blog posts",
+        "description": "",
+        "email_placeholder": "Enter your email",
+        "submit_button": "Subscribe",
+        "text_color": "black",
+        "show_icon": false,
+        "icon_img_width": "30",
+        "show_agreement": false,
+        "term_condition_text": "<p>I agree to the Terms and Conditions.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "1621243260e1af0c20",
+    "16225125199f82d8fe",
+    "16401949032ae6ee88",
+    "164019107042a00f2c",
+    "16427218850a9def4e",
+    "164190227308998835",
+    "1640193761bd9e707c",
+    "16427227516aec1a30",
+    "1641768528106825c7",
+    "1640195641050150d4",
+    "1640191190d623a4ad",
+    "1640191086fdc37905"
+  ]
+}

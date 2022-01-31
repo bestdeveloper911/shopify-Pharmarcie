@@ -1,0 +1,174 @@
+{% assign f_cart_countdown = shop.metafields.foxecom-bs-kit.cart-countdown %}
+<div
+    style="--tw-bg-opacity: 0;"
+    class="scd__wrapper hidden transition-colors duration-300 bg-black fixed z-[100] inset-0"
+>
+    <div class="scd__content transition-transform duration-300 translate-x-0 translate-x-full ml-auto min-h-full md:w-[450px] bg-white z-50">
+      <button class="scd__close p-2 cursor-pointer absolute">
+        {% render 'icon', name: 'times', size: 'large' %}
+      </button>
+
+      {%- assign primary_locale = '' -%}
+      {%- for locale in shop.published_locales -%}
+        {%- if locale.primary == true -%}
+          {%- assign primary_locale = locale.iso_code -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- capture form_action -%}
+        /checkout{%- if primary_locale != request.locale.iso_code -%}?locale={{request.locale.iso_code}}{%- endif -%}
+      {%- endcapture -%}
+
+      {%- if primary_locale != request.locale.iso_code -%}
+        {%- capture checkout_params -%}
+          ?locale={{request.locale.iso_code}}
+        {%- endcapture -%}
+      {%- endif -%}
+
+      <form action="{{form_action}}" method="post" class="flex flex-col h-full" novalidate>
+        <div class="scd__header mx-6 py-4 md:py-6 border-b border-color-border">
+          <h3 class="text-2xl font-medium">{{ 'cart.general.title' | t }}</h3>
+          {% if f_cart_countdown.show_on_drawer == true and template != 'cart' %}
+            {% render 'foxkit-cart-countdown' %}
+          {% endif %}
+        </div>
+        <div class="scd__body sf__custom_scroll px-6 py-4 flex flex-col flex-grow">
+          {% render 'foxkit-cart-goal' %}
+          <div class="scd__items pt-2.5">
+            {% for item in cart.items %}
+              {% assign properties = item.properties %}
+              <div class="scd-item" data-line-key="{{ item.key }}" data-line-item-index="{{ forloop.index }}" data-variant-id="{{ item.variant_id }}" data-product-id="{{ item.product_id }}" data-cart-item>
+                <div class="scd-item__inner flex items-start">
+                  <div class="scd-item__image">
+                    <a href="{{ item.url }}" class="block" style="--aspect-ratio: {{ item.image.aspect_ratio | default: 0.75 }}">
+                      {% if item.image != blank %}
+                        {{ item | img_url: '360x' | img_tag: item.title }}
+                      {% else %}
+                        {{ 'image' | placeholder_svg_tag: 'sf__placeholder-svg w-full h-full' }}
+                      {% endif %}
+                    </a>
+                  </div>
+                  <div class="scd-item__info">
+                    <a href="{{ item.url }}" class="font-medium hover:underline">
+                      {{ item.product.title }}
+                    </a>
+                    {%- unless item.product.has_only_default_variant -%}
+                      <div class="scd-item__variant mb-0.5 flex">
+                        {%- for option in item.options_with_values -%}
+                          <span class="scd-item__variant-option">
+                          <span>{{ option.name }}: </span>
+                          {{ option.value }}
+                        </span>
+                        {%- endfor -%}
+                      </div>
+                    {%- endunless -%}
+                    <div class="scd-item__prices">
+                      {%- if item.original_price != item.final_price -%}
+                        <div class="cart-drawer__discounted-prices">
+                          <del class="scd-item__original-price text-color-sale-price">
+                            {{ item.original_price | money }}
+                          </del>
+                          <span class="scd-item__price scd-item__price--discount sf-currency text-color-regular-price">{{ item.final_price | money }}</span>
+                        </div>
+                      {%- else -%}
+                        <span class="scd-item__original-price scd-item__price sf-currency text-color-regular-price">{{ item.original_price | money }}</span>
+                      {%- endif -%}
+                    </div>
+                    {%- if item.discounts.size > 0 -%}
+                      <ul class="scd-item__discounts flex" role="list">
+                        {%- for discount in item.discounts -%}
+                          <li>
+                            {% render 'icon', name: 'discount' %}
+                            {{ discount.title }}
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                    <div class="flex items-center mt-[10px]">
+                      <div class="scd-item__quantity flex justify-between rounded">
+                        <button class="scd-item__btn" data-qty-change="dec--{{ item.key }}">-</button>
+                        <input
+                          class="py-1 scd-item__qty_input w-9 text-center"
+                          type="number"
+                          name="updates[]"
+                          id="updates_{{ item.key }}"
+                          data-line-key="{{ item.key }}"
+                          value="{{ item.quantity }}"
+                          min="0"
+                        />
+                        <button class="scd-item__btn" data-qty-change="inc--{{ item.key }}">+</button>
+                      </div>
+                      <button class="scd-item__remove underline p-2 ml-2" data-line-key="{{ item.key }}" data-item-index="{{ forloop.index }}">
+                        {{ 'cart.general.remove' | t }}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {% assign s_tag = null %}
+
+                {% for tag in item.product.tags %}
+                  {% if tag contains 'Ship_' %}
+                    {% assign s_tag = tag %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+                {% unless s_tag == null %}
+                  <div class="scd-item-shipping">
+                    {% assign ship_info = s_tag | split: '_' %}
+                    {% if ship_info[1] == 'USA' %}
+                      <img src="{{ 'united-states.png' | asset_url }}" alt="">
+                    {% else %}
+                      <img src="{{ 'france.png' | asset_url }}" alt="">
+                    {% endif %}
+                    <div>Shipping from {{ ship_info[1] }} in {{ ship_info[2] }} days
+                    </div>
+                  </div>
+                {% endunless %}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="scd-empty-msg mt-4 px-6 opacity-100 transition-opacity duration-300 delay-300">
+            {{ 'cart.general.empty' | t }}
+          </div>
+        </div>
+
+        <div class="scd__footer py-4 px-6">
+          {% render 'cart-addons' %}
+          <div class="scd__summary mb-4 pt-4" data-cart-summary>
+            <div data-discounts>
+              <ul class="scd-cart__discounts" role="list" data-discounts-list>
+              {% unless cart.cart_level_discount_applications.size == 0 %}
+                  {% for discount in cart.cart_level_discount_applications %}
+                    <li>
+                      {% render 'icon', name: 'discount' %}
+                      <span>{{ discount.title | upcase }}&nbsp;(-{{ discount.total_allocated_amount | money }})</span>
+                    </li>
+                  {% endfor %}
+              {% endunless %}
+              </ul>
+            </div>
+            <div class="scd__subtotal flex justify-between" data-cart-subtotal>
+              <span class="font-medium">{{ 'cart.general.subtotal' | t }}</span>
+              <span class="scd__subtotal-price font-medium sf-currency" data-cart-subtotal-price>{{ cart.total_price | money }}</span>
+            </div>
+          </div>
+          <div class="flex flex-col items-center">
+            <button type="submit" data-checkout class="sf__btn sf__btn-primary w-full scd__checkout mb-3" name="checkout">
+              {{ 'cart.general.checkout' | t }}
+            </button>
+            <a class="underline" href="{{ routes.cart_url }}">
+              {{ 'cart.general.viewcart' | t }}
+            </a>
+          </div>
+          {% if settings.cart_drawer_trust_badge %}
+          <div class="scd__trust-badge mt-2">
+            <img src="{{ settings.cart_drawer_trust_badge | img_url: '840x' }}" alt="Trust secure badge">
+          </div>
+          {% endif %}
+        </div>
+        
+        <div class="scd__overlay inset-0"></div>
+      </form>
+    </div>
+</div>

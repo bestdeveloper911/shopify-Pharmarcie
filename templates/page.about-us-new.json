@@ -1,0 +1,223 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "16427839830eed889a": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 20,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/image1_2.jpg",
+        "link": "",
+        "layout": "right",
+        "image_column_size": "4",
+        "title": "Welcome to Pharmarcie.com, <br>your local French pharmacy.",
+        "sub_title": "Bonjour!",
+        "text": "",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "custom_class": ""
+      }
+    },
+    "1642784283d374e65b": {
+      "type": "custom-content",
+      "blocks": {
+        "1642784282b30165d6-0": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "text": "<p>My name is Jina, and I'll be your guide across the universe of French Health & Beauty Products. <\/p><p>I have French ancestry and relocated from the United States with my family to France 10 years ago. Being a product junkie, I quickly fell in love with French pharmacies and their place in French culture.<\/p><p>In France, the pharmacies are almost as ubiquitous as the roundabout, and there are approximately 18,000 of them. But this understates the prevalence of community pharmacies, as there are many additional parapharmacies.<\/p><p>The difference between <em><strong>parapharmacy <\/strong><\/em>and <em><strong>pharmacy <\/strong><\/em>is important, particularly regarding what we sell and are permitted to sell on this website.<\/p>",
+            "width": "100%",
+            "alignment": "start",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "1642784282b30165d6-0"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "custom_class": ""
+      }
+    },
+    "164278417906003833": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 50,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/image1_5.jpg",
+        "link": "",
+        "layout": "left",
+        "image_column_size": "6",
+        "title": "",
+        "sub_title": "",
+        "text": "<p>A traditional pharmacy sells everything, including prescription medicines, and provides limited medical product assistance. A parapharmacy only sells non-prescription and non-medical grade health and beauty products.<\/p><p>On <strong>Pharmarcie.com<\/strong>, we mirror the parapharmacy. We do not sell any prescription drugs or medications.<\/p><p>Generally, this distinction suffices.  However, there are instances where an active ingredient adjudicated non-medical in France can be considered a restricted ingredient in the United States and thereby restricted for resale.<\/p>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "custom_class": ""
+      }
+    },
+    "1642785049463829ed": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 50,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/image1_3.jpg",
+        "link": "",
+        "layout": "right",
+        "image_column_size": "6",
+        "title": "",
+        "sub_title": "",
+        "text": "<p>I love walking into pharmacies and parapharmacies. I am so excited to see what new products are available, as there are always newcomers, both from existing and new brands. <\/p><p>All good pharmacies have specialists known as <em><strong>animatrice <\/strong><\/em>that are extremely knowledgeable and ready to help you with any questions. Although they are hired to work for the popular brands represented in the pharmacy, they will help you with any questions (while gently prodding you to their brand!). <\/p><p>And don’t forget to ask for <em><strong>échantillons <\/strong><\/em>– product samples – there are always plenty of those available if you ask (and we will always include at least one with your order on our site).<\/p>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "custom_class": ""
+      }
+    },
+    "164278615485c1fefe": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "item_gap": 50,
+        "item_gap_mobile": 30,
+        "image": "shopify:\/\/shop_images\/image.jpg",
+        "link": "",
+        "layout": "left",
+        "image_column_size": "6",
+        "title": "",
+        "sub_title": "",
+        "text": "<p>On <strong>Pharmarcie.com<\/strong>, I will be your supporting <em><strong>animatrice<\/strong><\/em>. If you have any questions, please do not hesitate to ask me. Whether about a specific product, a condition you want a product for, or finding a product we do not currently carry, I am here to help answer any questions. <\/p><p>Although I am not a doctor, nor a medical professional, nor do I hold myself to be, I have been working with pharmacies for the past ten years, so I can, at the very least, point you in the right direction. But please always seek advice from a doctor for any severe or general medical questions. <\/p><p>To understand the French pharmacy, one must understand what is available and what it will do. For this, please sign up to our mailing list and enjoy our frequent blog posts and updates. You can also click here to review past posts.<\/p>",
+        "text_size": "medium",
+        "content_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "sf__btn-link",
+        "button_size": "",
+        "custom_class": ""
+      }
+    },
+    "1642787697bb7a2506": {
+      "type": "custom-content",
+      "blocks": {
+        "16427876965bfedd49-0": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "subheading": "",
+            "text": "<p>When I first came to France, I remember I was desperate to find Tylenol, which was unavailable. Little did I know then that the French equivalent of Tylenol was in all pharmacies (not parapharmacies) and in higher doses than the ones available in the US over the counter. So if you are French, I am happy to support you the other way so you can continue to buy your French staple products. Please do not hesitate to ask me for any help.<\/p><p>Thank you for stopping by, and we hope to be of service to you.<br\/><\/p><p>Jina<\/p>",
+            "width": "100%",
+            "alignment": "start",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "16427876965bfedd49-0"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "custom_class": ""
+      }
+    },
+    "164278673380f789dc": {
+      "type": "blog-posts",
+      "settings": {
+        "heading": "Recent Blog Posts",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "blog": "news",
+        "limit": 12,
+        "column": 4,
+        "column_gap": 30,
+        "mobile_gap": 10,
+        "article_image_aspect_ratio": "16\/9",
+        "article_align_content": "text-left",
+        "article_show_tags": false,
+        "article_show_date": true,
+        "article_show_excerpt": false,
+        "article_show_button": false,
+        "button_link": "shopify:\/\/blogs\/news",
+        "button_text": "View More",
+        "button_style": "sf__btn-link",
+        "button_size": "sf__btn-small",
+        "use_scroll_mobile": true,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16427839830eed889a",
+    "1642784283d374e65b",
+    "164278417906003833",
+    "1642785049463829ed",
+    "164278615485c1fefe",
+    "1642787697bb7a2506",
+    "164278673380f789dc"
+  ]
+}

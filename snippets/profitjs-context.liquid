@@ -1,0 +1,30 @@
+<script id="profitjs-context-data" type="application/json">
+    {
+        "shop": {
+	        "domain": "{{ shop.domain }}",
+            "permanent_domain": "{{ shop.permanent_domain }}",
+            "url": "{{ shop.url }}",
+            "secure_url": "{{ shop.secure_url }}",
+            "money_format": {{ shop.money_format | json }},
+            "currency": {{ shop.currency | json }}
+        },
+        "customer": {
+            "id": {{ customer.id | json }},
+            "tags": {{ customer.tags | json }}
+        },
+        "cart": {{ cart | json }},
+        "currency": {{ cart.currency.iso_code | json }},
+        "template": "{{ template | split: "." | first }}",
+        "product": {
+        	"product": {{ product | json }},
+            "collections": {{ product.collections | json }}
+        },
+        "productCollections": {{ product.collections | json }},
+        "collection": {{ collection.products | json }},
+        "pageType": "{{ request.page_type }}",
+        "cartProducts": [{%- for item in cart.items -%} {"product": {{item.product | json}}, "key": {{item.key | json }}, "collections": {{item.product.collections | json}} } {% if forloop.last == false %}, {% endif %} {%- endfor -%}]
+    }
+</script>
+<script>
+  window.pjs =   window.pjs | {};
+</script>

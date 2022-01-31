@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-contact",
+      "settings": {
+        "container": "container"
+      }
+    },
+    "maps": {
+      "type": "maps",
+      "disabled": true,
+      "settings": {
+        "container": "container",
+        "map_height": "large",
+        "textx": "40.6700",
+        "texty": "-73.9400",
+        "zoom": "11",
+        "text2": "New York"
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "blocks": {
+        "text-block-1": {
+          "type": "textblock",
+          "disabled": true,
+          "settings": {
+            "title": "Address",
+            "content": "<p>7895 Piermont Dr NE Albuquerque, NM 198866, <a href=\"#\">See Our Stores<\/a><\/p>"
+          }
+        },
+        "text-block-2": {
+          "type": "textblock",
+          "settings": {
+            "title": "Email",
+            "content": "<p>contact@pharmarcie.com<\/p>"
+          }
+        },
+        "text-block-3": {
+          "type": "socialmedia",
+          "settings": {
+            "title": "Social Media"
+          }
+        },
+        "text-block-4": {
+          "type": "textblock",
+          "disabled": true,
+          "settings": {
+            "title": "We're Open",
+            "content": "<p>Our store has re-opened for shopping, exchanges<\/p><p>Every day 11am to 7pm<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text-block-1",
+        "text-block-2",
+        "text-block-3",
+        "text-block-4"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "title": "We would love to hear from you.",
+        "description": "<p>If you’ve questions, requests or comments, then drop us a line.<\/p>",
+        "show_name": true,
+        "show_phone": false,
+        "show_email": true,
+        "show_message": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "maps",
+    "contact-form"
+  ]
+}

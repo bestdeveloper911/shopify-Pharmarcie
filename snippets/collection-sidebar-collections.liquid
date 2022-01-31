@@ -1,0 +1,23 @@
+{%- assign bs = block.settings -%}
+{%- assign links = bs.collectionlist_link -%}
+{%- assign open = '' -%}
+{%- if bs.open_collectionlist -%}
+    {%- assign open = 'open' -%}
+{%- endif -%}
+{%- assign accordion = '' -%}
+{%- unless bs.use_accordion -%}
+    {%- assign accordion = 'lg:pointer-events-none sf__no-accordion' -%}
+{%- endunless -%}
+
+{% if links != blank %}
+<div class="sf__accordion-item mb-8 {{ open }}">
+  <h6 class="sf__accordion-button {{ accordion }} mb-4 pr-4">{{ bs.title }}</h6>
+  <div class="sf__accordion-content max-h-full">
+    <ul class="sf__list-row">
+      {%- for link in linklists[links].links -%}
+        <li{% if link.active %} class="active hover-underline"{% endif %}><a href="{{ link.url }}"><span>{{ link.title }}</span></a></li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+{%- endif -%}

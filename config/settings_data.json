@@ -1,0 +1,328 @@
+{
+  "current": {
+    "favicon": "shopify:\/\/shop_images\/fav_icon_dark_1.png",
+    "show_scroll_top_button": true,
+    "container_width": 1200,
+    "container_fluid_width": 1620,
+    "container_fluid_offset": 150,
+    "color_primary": "#0cd327",
+    "color_field_bg": "#ffffff",
+    "color_body_text": "#000000",
+    "color_heading_text": "#000000",
+    "color_sub_text": "#666666",
+    "color_text_link_hover": "#666666",
+    "color_btn_bg": "#0cd327",
+    "color_btn_bg_hover": "#0cd327",
+    "prod_sale_price_color": "#1878b9",
+    "prod_regular_price_color": "#0cd327",
+    "prod_type_color": "#666666",
+    "color_annoucement_bg": "#d2d2d2",
+    "color_annoucement_text": "#000000",
+    "color_topbar_bg": "#ffffff",
+    "color_topbar_text": "#000000",
+    "color_header_bg": "#ffffff",
+    "color_header_link": "#000000",
+    "color_header_transparent": "#000000",
+    "color_cart_wishlist_count": "#000000",
+    "bg_cart_wishlist_count": "#0cd327",
+    "color_menu_bar_bg": "#000000",
+    "color_menu_bar_text": "#f8f8f8",
+    "color_footer_bg": "#000000",
+    "color_footer_text": "#0cd327",
+    "color_footer_subtext": "#ffffff",
+    "color_footer_link": "#ffffff",
+    "color_footer_link_hover": "#0cd327",
+    "color_footer_bg_mb": "#000000",
+    "color_footer_bottom_bg": "#000000",
+    "color_footer_bottom_text": "#0cd327",
+    "color_footer_bottom_bg_mb": "#000000",
+    "color_border": "#f5f5f5",
+    "img_overlay_bg": "#188323",
+    "img_overlay_opacity": 20,
+    "tooltip_background_color": "#d2d2d2",
+    "tooltip_text_color": "#000000",
+    "type_base_font": "roboto_condensed_n4",
+    "use_custom_font_body": true,
+    "custom_body_font": "https:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/Jost-Regular.ttf?v=1618297125@400\nhttps:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/Jost-Medium.ttf?v=1618297125@500\nhttps:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/Jost-SemiBold.ttf?v=1618297125@600",
+    "custom_body_weight": "400",
+    "type_base_size": 17,
+    "type_header_font": "roboto_condensed_n7",
+    "use_custom_font_heading": true,
+    "custom_heading_font": "https:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/Jost-Regular.ttf?v=1618297125@400\nhttps:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/Jost-Medium.ttf?v=1618297125@500\nhttps:\/\/cdn.shopify.com\/s\/files\/1\/0561\/2742\/2636\/files\/Jost-SemiBold.ttf?v=1618297125@600",
+    "custom_heading_weight": "400",
+    "type_header_base_size": 26,
+    "btn_uppercase_text": true,
+    "btn_weight": "600",
+    "pcard_layout": "3",
+    "pcard_alignment": "left",
+    "pcard_image_ratio": "contain",
+    "on_sale_badge": "show_percentage",
+    "show_badge_sale": true,
+    "show_badge_soldout": true,
+    "show_cart_button": true,
+    "show_quickview_button": false,
+    "show_wishlist_button": false,
+    "show_compare_button": false,
+    "show_second_img": false,
+    "show_vendor": true,
+    "show_review_badge": true,
+    "uppercase_prd_name": false,
+    "select_option_button_action": "link",
+    "variant_option_design_default": "default",
+    "variant_option_title1": "Color",
+    "variant_option_display_name1": "",
+    "variant_option_design1": "default",
+    "variant_option_design2": "default",
+    "variant_option_design3": "color",
+    "product_colors": "red: #FF6961,\nyellow: #FDDA76,\nblack: #000000,\nblack band: #000000,\nblue: #8DB4D2,\ngreen: #C1E1C1,\npurple: #B19CD9,\nsilver: #EEEEEF,\nwhite: #FFFFFF,\nbrown: #836953,\nlight brown: #B5651D,\ndark turquoise: #23cddc,\norange: #FFB347,\ntan: #E9D1BF,\nviolet: #B490B0,\npink: #FFD1DC,\ngrey: #E0E0E0,\nsky: #96BDC6,\npale leaf: #CCD4BF,\nlight blue: #b1c5d4,\ndark grey: #aca69f,\nbeige: #EBE6DB,\nbeige band: #EED9C4,\ndark blue: #063e66,\ncream: #FFFFCC,\nlight pink: #FBCFCD,\nmint: #bedce3,\ndark gray: #3A3B3C,\nrosy brown: #c4a287,\nlight grey:#D3D3D3,\ncopper: #B87333,\nrose gold: #ECC5C0,\nnight blue: #151B54,\ncoral: #FF7F50,\nlight purple: #C6AEC7",
+    "filter_color1": "Gingham",
+    "filter_color2": "flannel",
+    "article_image_aspect_ratio": "1\/1",
+    "article_align_content": "text-left",
+    "article_show_tags": false,
+    "article_show_date": true,
+    "article_show_excerpt": false,
+    "article_show_button": false,
+    "share_facebook": true,
+    "share_pinterest": true,
+    "contact_phone_number": "",
+    "contact_email": "",
+    "social_twitter_link": "",
+    "social_twitter_label": "",
+    "social_facebook_link": "https:\/\/facebook.com\/pharmarcie.healthandbeauty",
+    "social_facebook_label": "",
+    "social_pinterest_link": "",
+    "social_pinterest_label": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/pharmarcie.healthandbeauty",
+    "social_instagram_label": "",
+    "search_by_tag": true,
+    "search_by_body": true,
+    "popular_search_queries": "Bioderma, Essential Oils, Sunscreen",
+    "show_cookie_consent": false,
+    "cookie_consent_placement": "bottom-left",
+    "cookie_consent_theme": "white",
+    "custom_css": ".sf-topbar {\n  border-color: #eee;\n}\n[id$=\"16225125199f82d8fe\"] .section-my {\n  padding-top: 45px;\n  padding-bottom: 45px;\n  margin-bottom: 0;\n  margin-top: 0;\n}\n[id$=\"16225125199f82d8fe\"] {\n  border-top: 1px solid #eee;\n}\n.sf__font-normal {\n  font-weight: 400;\n}\n[id$=\"16225316461d1cff80\"]\n  .collection-card__info\n  h3\n  a {\n  font-weight: 400;\n  font-size: 24px;\n  line-height: 34px;\n  margin-bottom: 4px;\n}\n[id$=\"16225316461d1cff80\"]\n  .collection-card__info\n  p {\n  color: #666;\n}\n[id$=\"16225125199f82d8fe\"] .sf-icon-box__text h3 {\n  line-height: 26px;\n  font-size: 20px;\n  font-weight: 500;\n}\n@media (min-width: 1536px) {\n  [id$=\"1621243260e1af0c20\"] .slide__block-title {\n    font-size: 100px;\n    line-height: 95px;\n  }\n}\n@media (max-width: 576px) {\n  [id$=\"1621243260e1af0c20\"] a.sf__mobile-button,\n  [id$=\"162251092958fcda7c\"] .sf__btn-primary,\n  [id$=\"162251092958fcda7c\"] .sf__btn-secondary {\n    width: 100%;\n  }\n  [id$=\"16225316461d1cff80\"] .section__heading {\n    text-align: center;\n  }\n  [id$=\"16225316461d1cff80\"]\n    .collection-card__info\n    h3\n    a {\n    font-weight: 500;\n  }\n  [id$=\"16225316461d1cff80\"]\n    .collection-card__info\n    p {\n    font-size: 14px;\n    line-height: 20px;\n  }\n  [id$=\"16225125199f82d8fe\"] .sf-icon-box__text h3 {\n    font-size: 18px;\n    margin-bottom: 2px;\n  }\n}",
+    "checkout_logo_image": "shopify:\/\/shop_images\/pharmarcie_logo_web_rvb.png",
+    "checkout_accent_color": "#0cd327",
+    "checkout_button_color": "#0cd327",
+    "show_variant_swatch_image": true,
+    "bg_cart_count": "#da3f3f",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "3d22ea80-5169-4732-a4dd-705ff41b4b0e": {
+            "type": "collection-list",
+            "disabled": true,
+            "settings": {
+              "heading": "Brands",
+              "container": "container-fluid",
+              "collection_1": "",
+              "collection_2": "",
+              "collection_3": "",
+              "collection_4": "",
+              "collection_5": ""
+            }
+          },
+          "5e153016-a9d7-46c9-a10e-30d16446793d": {
+            "type": "topbar",
+            "disabled": true,
+            "settings": {
+              "show_divider": false,
+              "show_phone_numb": true,
+              "show_email": true,
+              "show_social_links": false,
+              "show_stores_page": false,
+              "show_currency_switcher": true,
+              "show_language_switcher": false,
+              "alert_message": "<span>Questions or Concerns?  |  <a class=\"sf__text-link  ml-1 underline\" href=\"#\">Ask Jina<\/a><span><\/span><\/span>"
+            }
+          },
+          "5b9aec5f-b955-4765-9a87-1962d613e909": {
+            "type": "custom_html",
+            "disabled": true,
+            "settings": {
+              "heading": "Home",
+              "container": "container",
+              "html": ""
+            }
+          },
+          "a820a1bc-dfc4-4e61-8c8a-de23659759a6": {
+            "type": "banner",
+            "disabled": true,
+            "settings": {
+              "heading": "Brands",
+              "container": "container",
+              "banner_style": "inside",
+              "banner_link": "",
+              "banner_title": "The New - Season Shoes Edit",
+              "banner_desc": "",
+              "banner_button_text": "Shop now"
+            }
+          },
+          "31481022-f698-4968-bf06-3c24f36b09e7": {
+            "type": "product-list",
+            "disabled": true,
+            "settings": {
+              "heading": "Products",
+              "container": "container-fluid",
+              "stretch_width": false,
+              "collection": "best-sellers",
+              "limit": 6,
+              "columns": 2
+            }
+          },
+          "ea723308-92c0-42ae-a45d-aede426d8cdd": {
+            "type": "custom_html",
+            "disabled": true,
+            "settings": {
+              "heading": "Features",
+              "container": "inherit",
+              "html": ""
+            }
+          },
+          "de04ead2-4a7a-4e23-a927-f9a19f237598": {
+            "type": "submenu",
+            "disabled": true,
+            "settings": {
+              "heading": "Blog",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "3d22ea80-5169-4732-a4dd-705ff41b4b0e",
+          "5e153016-a9d7-46c9-a10e-30d16446793d",
+          "5b9aec5f-b955-4765-9a87-1962d613e909",
+          "a820a1bc-dfc4-4e61-8c8a-de23659759a6",
+          "31481022-f698-4968-bf06-3c24f36b09e7",
+          "ea723308-92c0-42ae-a45d-aede426d8cdd",
+          "de04ead2-4a7a-4e23-a927-f9a19f237598"
+        ],
+        "settings": {
+          "header_design": "logo-left__2l",
+          "container": "container",
+          "header_sticky": false,
+          "transparent_on_top": false,
+          "logo_text": "MINIMOG",
+          "logo": "shopify:\/\/shop_images\/pharmarcie_logo_web_rvb.png",
+          "logo_max_width": 325,
+          "sticky_logo_max_width": 175,
+          "mobile_logo_max_width": 325,
+          "main_menu": "main-menu",
+          "secondary_menu": "",
+          "mobile_menu": "",
+          "uppercase_parent_level": false,
+          "b_menu": "second-menu",
+          "search": "show_full",
+          "show_account_icon": true,
+          "show_cart_icon": true,
+          "show_wishlist_icon": false,
+          "show_compare_icon": false,
+          "show_currency_switcher": false,
+          "show_language_switcher": false,
+          "show_ask_to_jina": true,
+          "ask_jina_image": "shopify:\/\/shop_images\/ask_jina_7131a28b-f0f0-4fe5-b79e-821c1c0fbfcf.png",
+          "width": "300px",
+          "mob_width": "200px",
+          "ask_link": "shopify:\/\/pages\/ask-jina-1"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "49e72833-c68f-4a7b-ab64-3ef0cae99bcb": {
+            "type": "menu",
+            "settings": {
+              "menu": "footer",
+              "title": "Help Center",
+              "width": "25%"
+            }
+          },
+          "7ebc2f78-975b-4a81-b874-103c3355a866": {
+            "type": "menu",
+            "settings": {
+              "menu": "our-policies",
+              "title": "Our Policies",
+              "width": "25%"
+            }
+          },
+          "93571032-b171-4c66-8b3e-96cd91946363": {
+            "type": "our_store",
+            "settings": {
+              "title": "Follow Us",
+              "description": "",
+              "show_email": true,
+              "show_phone": false,
+              "show_socials_link": true,
+              "width": "25%"
+            }
+          },
+          "286210bf-4d9e-44e6-9ccf-0c3e40ba1f30": {
+            "type": "menu",
+            "disabled": true,
+            "settings": {
+              "menu": "follow-us",
+              "title": "Follow Us",
+              "width": "25%"
+            }
+          },
+          "7b0bf4c6-3873-4222-b8d6-ce009e710078": {
+            "type": "newsletter",
+            "disabled": true,
+            "settings": {
+              "title": "Subscribe",
+              "description": "Enter your email below to be the first to know about our offers",
+              "email_placeholder": "Enter your email",
+              "form_style": "bordered",
+              "show_social": false,
+              "width": "25%"
+            }
+          }
+        },
+        "block_order": [
+          "49e72833-c68f-4a7b-ab64-3ef0cae99bcb",
+          "7ebc2f78-975b-4a81-b874-103c3355a866",
+          "93571032-b171-4c66-8b3e-96cd91946363",
+          "286210bf-4d9e-44e6-9ccf-0c3e40ba1f30",
+          "7b0bf4c6-3873-4222-b8d6-ce009e710078"
+        ],
+        "settings": {
+          "design": "footer-1",
+          "container": "container",
+          "bordered": false,
+          "copyright": "© PHARMARCIE 2021",
+          "show_currency_selector": false,
+          "show_language_selector": false,
+          "show_social_links": false,
+          "show_payment_icons": true,
+          "payment_icons_width": 150
+        }
+      },
+      "annoucement": {
+        "type": "annoucement",
+        "settings": {
+          "show_announcement": true,
+          "homepage_only": false,
+          "show_close": false,
+          "message": "<span class=\"font-medium\" style=\"font-size: 15px;\">Free shipping for all orders over $100 --- Flat rate shipping $6.99 for all orders --- Click here for Shipping Policy<\/span>",
+          "message_link": "shopify:\/\/pages\/shipping-information",
+          "show_divider": true
+        }
+      },
+      "mobile-sticky-bar": {
+        "type": "mobile-sticky-bar",
+        "settings": {
+          "show_mobile_sticky": true,
+          "show_home_icon": true,
+          "show_collection_icon": false,
+          "show_cart_icon": true,
+          "show_search_icon": true,
+          "show_account_icon": true,
+          "show_wishlist_icon": false
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

@@ -1,0 +1,20 @@
+<div data-register-form>
+    {% form 'create_customer' %}
+    {% render 'form__error', form: form %}
+
+    <input type="text" name="customer[first_name]" placeholder="{{ 'customer.register.first_name' | t }}" class="form-control" />
+    <input type="text" name="customer[last_name]" placeholder="{{ 'customer.register.last_name' | t }}" class="form-control" />
+    <input type="email" name="customer[email]" placeholder="{{ 'customer.login.email' | t }}" class="form-control" />
+    <input type="password" name="customer[password]" placeholder="{{ 'customer.login.password' | t }}" class="form-control" />
+    <div class="mt-3 text-color-secondary">
+        {{ 'customer.register.description' | t }}
+    </div>
+
+    <button class="mt-6 mb-3 w-full sf__btn sf__btn-primary">
+        {{ 'customer.register.title' | t }}
+    </button>
+    <a class="w-full mt-[12xpx] sf__btn sf__btn-secondary" href="{{ routes.account_login_url }}">
+        {{ 'customer.login.title' | t }}
+    </a>
+    {% endform %}
+</div>

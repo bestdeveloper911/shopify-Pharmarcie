@@ -1,0 +1,17 @@
+{%- if settings.show_cart_button -%}
+  <div class="sf__pcard-quick-add">
+    {%- if product.has_only_default_variant -%}
+      {% render 'product-atc', product: product, btn_text: quick_add_text, class: 'sf__btn-secondary sf__btn-white' %}
+    {% else %}
+      {% if settings.select_option_button_action == 'popup' %}
+      <button class="sf-pqv__button sf__btn sf__btn-secondary sf__btn-white flex-grow" data-product-handle="{{ product.handle }}">
+        <span>{{ quick_add_text }}</span>
+      </button>
+      {% else %}
+        <a class="sf__btn sf__btn-secondary sf__btn-white flex-grow" href="{{ product.url }}">
+          <span>{{ quick_add_text }}</span>
+        </a>
+      {% endif %}
+    {% endif %}
+  </div>
+{%- endif -%}

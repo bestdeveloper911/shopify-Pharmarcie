@@ -1,0 +1,61 @@
+{% assign is_size = false %}
+
+{%- for option in product.options_with_values -%}
+    {% assign downcased_option = option.name | downcase %}
+    {% assign size_title_downcase = size_title | downcase %}
+    {% if size_title_downcase contains downcased_option %}
+        {% assign is_size = true %}
+    {% else %}
+        {% assign is_size = false %}
+    {% endif %}
+
+    <div
+      data-index="option-{{ option.position }}-{{ forloop.index0 }}"
+      data-product-option="{{ option.name }}"
+      class="product-options__option product-options__option--"
+    >
+      {% assign found_option = false %}
+      {% assign option_design = '' %}
+      {% assign option_label = option.name %}
+
+      {%- for i in (1..5) -%}
+        {% unless found_option == true %}
+          {%- assign option_name_key = 'variant_option_title' | append: i -%}
+          {%- assign option_display_name_key = 'variant_option_display_name' | append: i -%}
+          {%- assign option_design_key = 'variant_option_design' | append: i -%}
+
+          {%- assign option_name = settings[option_name_key] -%}
+          {%- if option_name == option.name -%}
+              {% assign found_option = true %}
+              {% assign option_design = settings[option_design_key] %}
+              {% assign option_label = settings[option_display_name_key] | default: option.name %}
+          {%- endif -%}
+        {% endunless %}
+      {%- endfor -%}
+
+      {% assign design = option_design %}
+      {%- if found_option == false or option_design == '' -%}
+        {% assign design = settings['variant_option_design_default'] %}
+      {%- endif -%}
+
+      <div class="prod__option-label font-medium flex flex-wrap items-center justify-between prod__option-label--{{ option_design }}">
+        <div>
+          <span>{{ option_label }}:</span>
+          <span
+            data-option-label data-label-position="{{ option.position }}"
+            class="option-label">{{ option.selected_value }}</span>
+        </div>
+
+        {% if is_size %}
+          <button data-open-sizeguide class="inline-flex items-center hidden">
+            {% render 'icon', name: 'ruler-horizontal' %}
+            <span class="ml-2 ">{{ 'products.product.size_guide' | t }}</span>
+          </button>
+        {% endif %}
+      </div>
+
+      <div class="prod__option prod__option--{{ design }} flex items-center flex-wrap justify-between">
+        {% render 'product-option-design', design: design, option: option %}
+      </div>
+    </div>
+{%- endfor -%}

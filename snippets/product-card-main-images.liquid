@@ -1,0 +1,34 @@
+{% assign pcard_default_image = settings.pcard_default_image %}
+
+{% if image_ratio == nil or image_ratio == blank %}
+  {%- assign image_ratio = settings.pcard_image_ratio | default: '1/1' -%}
+{% endif %}
+{%- if image_ratio == 'contains' -%}
+  {%- assign image_ratio = '1/1' -%}
+{%- elsif image_ratio == 'original' -%}
+  {%- assign image_ratio = product.featured_image.aspect_ratio | default: '1/1' -%}
+{%- endif -%}
+
+<div class="flex justify-center items-center">
+  <a href="{{ product.url | within: collection }}" class="block w-full">
+      {% for image in product.images %}
+        {% assign image_attributes = 'alt="' | append: product.title | append: '"' %}
+        {% if forloop.index0 < 2 %}
+          {%- capture image_class -%}
+            {%- if forloop.index0 == 0 -%}{% if forloop.length == 1 %}spc__img-only {% endif %}spc__main-img{%- else -%}spc__hover-img{%- endif -%}
+          {%- endcapture -%}
+          <div class="{{ image_class }}">
+            {% render 'responsive-image', image: image, aspect_ratio: image_ratio, image_class: 'se-out w-full h-full', image_attributes: image_attributes %}
+          </div>
+        {% endif %}
+      {% else %}
+        {% if pcard_default_image != blank %}
+          {% render 'responsive-image', image: pcard_default_image, aspect_ratio: image_ratio, image_class: 'se-out w-full h-full', image_attributes: image_attributes %}
+        {% else %}
+          <div style="--aspect-ratio: {{ image_ratio }}">
+            <img src="https://dummyimage.com/408x535/ddd/aaa" alt="{{ product.title }}" />
+          </div>
+        {% endif %}
+      {% endfor %}
+  </a>
+</div>

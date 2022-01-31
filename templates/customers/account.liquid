@@ -1,0 +1,45 @@
+{%- capture page_title -%}
+    {{ 'customer.account.title' | t }}
+{%- endcapture -%}
+{% render 'page-title', title: page_title %}
+
+<div class="md:px-6 lg:px-12 xl:px-16 2xl:px-48 py-8 md:py-12 lg:py-20 flex">
+    {% render 'customer-navs' %}
+    <div class="px-4 md:px-8 xl:px-16 2xl:px-24 md:w-5/6">
+        <div class="mb-10">
+            Hello
+            <span class="font-semibold">{{ customer.name }}</span>
+            (not <span class="font-semibold">{{ customer.name }}</span>?
+            <a href="{{ routes.account_logout_url }}" class="underline">{{ 'customer.account.log_out' | t }}</a>)
+        </div>
+
+        <div class="mb-16">
+            <h3 class="text-2xl font-medium mb-8">{{ 'customer.orders.title' | t }}</h3>
+            {% render 'customer-orders' %}
+        </div>
+
+        <div class="mb-16">
+            <h3 class="text-2xl font-medium mb-3">{{ 'customer.account.details' | t }}</h3>
+
+            <div class="flex border-b border-color-border py-5">
+                <div class="w-1/2">
+                    {{ 'customer.account.name' | t }}
+                </div>
+                <div class="w-1/2">
+                    <span class="text-color-secondary">{{ customer.name }}</span>
+                </div>
+            </div>
+            <div class="flex border-b border-color-border py-5">
+                <div class="w-1/2">
+                    {{ 'customer.account.email' | t }}
+                </div>
+                <div class="w-1/2">
+                    <span class="text-color-secondary">{{ customer.email }}</span>
+                </div>
+            </div>
+        </div>
+        <a href="/account/addresses" class="sf__btn sf__btn-primary">
+            {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+        </a>
+    </div>
+</div>

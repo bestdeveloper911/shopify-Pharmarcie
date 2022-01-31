@@ -1,0 +1,19 @@
+<div class="sf__sidebar" data-type="{{ item_sidebar }}">
+  <div class="sf__sidebar-content">
+      <h3 class="text-3xl p-5 font-medium {% if item_sidebar != 'fixed' %}xl:px-0 xl:mb-8 xl:py-0{% endif %}">{{ 'collections.sidebar.filtres_title' | t }}</h3>
+      <div class="sf__sidebar-close cursor-pointer absolute top-5 right-5">{% render 'icon', name: 'x', size: 'large' %}</div>
+      <div class="sf__sidebar-wrapper">
+        <div class="sf__filter-wrapper">
+          {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'filter' %}
+                  {%- render "collection-sidebar-filter-n", section: section, block: block -%}
+                {% else %}
+                  {%- render 'collection-sidebar-collections', block: block -%}
+              {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+</div>
+

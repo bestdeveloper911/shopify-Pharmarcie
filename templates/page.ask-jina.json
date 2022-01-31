@@ -1,0 +1,74 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {}
+    },
+    "1640206731ec8816d7": {
+      "type": "custom-content",
+      "blocks": {
+        "16402067307857f8cd-0": {
+          "type": "text",
+          "settings": {
+            "title": "Have a question about<br>French Health & Beauty Products?",
+            "subheading": "",
+            "text": "<p>If you have any questions, please do not hesitate to ask me. Whether about a specific product, a condition you want a product for, or to find a product we do not currently carry, I am here to help.<\/p>",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "16402067307857f8cd-0"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "ASK JINA",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 200,
+        "use_scroll_mobile": false,
+        "gap_mobile": 22,
+        "custom_class": ""
+      }
+    },
+    "acerill_custom_forms": {
+      "type": "apps",
+      "blocks": {
+        "acerill_custom_forms_block": {
+          "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/custom-form\/830f910d-3579-44cb-9d18-92197bb5bd98",
+          "settings": {
+            "formId": "67afd299-7228-428a-97cf-b704f557573f",
+            "behavior": "standard"
+          }
+        }
+      },
+      "block_order": [
+        "acerill_custom_forms_block"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1640206731ec8816d7",
+    "acerill_custom_forms"
+  ]
+}

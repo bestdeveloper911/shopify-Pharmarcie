@@ -1,0 +1,10 @@
+{% if variant == blank %}
+    {% assign variant = product.selected_or_first_available_variant %}
+{% endif %}
+
+<span class="{{ compare_price_class }} sf-currency prod__compare_price mr-2 line-through text-color-secondary {% unless variant.compare_at_price > variant.price %}hidden{% endunless %}">
+  {{ variant.compare_at_price | money }}
+</span>
+<span class="{{ price_class }} prod__price sf-currency text-color-regular-price">
+  {{ variant.price | money }}
+</span>

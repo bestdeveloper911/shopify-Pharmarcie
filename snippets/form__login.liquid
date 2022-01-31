@@ -1,0 +1,20 @@
+<div data-login-form class="flex flex-col-reverse">
+    {% form 'customer_login' %}
+    {%- comment -%}
+    {% if form.posted_successfully? %}
+    <div class="notification show success mb-3 text-base">
+        {{ 'customer.recover_password.success' | t }}
+    </div>
+    {% endif %}
+    {%- endcomment -%}
+    {% render 'form__error', form: form %}
+
+    <input type="email" name="customer[email]" placeholder="{{ 'customer.login.email' | t }}" class="form-control" />
+    <input type="password" name="customer[password]" placeholder="{{ 'customer.login.password' | t }}" class="form-control" />
+
+    <a class="underline block my-3 sf-customer__reset-password-btn">{{ 'customer.login.forgot_password' | t }}</a>
+    <button class="sf__btn sf__btn-primary mt-4  mb-3 w-full" type="submit">
+        {{ 'customer.login.sign_in' | t }}
+    </button>
+    {% endform %}
+</div>

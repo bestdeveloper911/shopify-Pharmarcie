@@ -1,0 +1,19 @@
+<script>
+              if (typeof BSS_PL == 'undefined') {
+                  var BSS_PL = {};
+              }
+              var bssPlApiServer = "https://product-labels-pro.bsscommerce.com";
+              BSS_PL.customerTags = {% if customer %}'{%for tag in customer.tags%}{{ tag }},{% endfor %}'{% else %}'null'{% endif %};
+              BSS_PL.configData = [];
+              BSS_PL.storeId = 19225;
+              BSS_PL.currentPlan = "false";
+              BSS_PL.storeIdCustomOld = "10678";
+              BSS_PL.storeIdOldWIthPriority = "12200";
+              BSS_PL.apiServerProduction = "https://product-labels-pro.bsscommerce.com";
+              
+              </script>
+          <style>
+.homepage-slideshow .slick-slide .bss_pl_img {
+    visibility: hidden !important;
+}
+</style>

@@ -1,0 +1,33 @@
+{% if content_for_header contains "mobilemenu\/async.js" %}
+{% include 'qikify-mobilemenu' %}
+{% endif %}
+{% if content_for_header contains "slideshow\/async.js" %}
+{% include 'qikify-slideshow' %}
+{% endif %}
+{% if content_for_header contains "tmenu\/async.js" %}
+{% include 'qikify-tmenu' %}
+{% endif %}
+{% if content_for_header contains "salekit\/async.js" %}
+{% include 'qikify-salekit' %}
+{% endif %}
+{% if content_for_header contains "stickycart\/async.js" %}
+{% include 'qikify-stickycart' %}
+{% endif %}
+{% if content_for_header contains "contactform\/async.js" %}
+{% include 'qikify-contactform' %}
+{% endif %}
+{% if content_for_header contains "quickview\/async.js" %}
+{% include 'qikify-quickview' %}
+{% endif %}
+{% if content_for_header contains "smartbar\/async.js" %}
+{% include 'qikify-smartbar' %}
+{% endif %}
+{% if content_for_header contains "tranzi\/async.js" %}
+{% include 'qikify-tranzi' %}
+{% endif %}
+{% if content_for_header contains "boosterkit\/async.js" %}
+{% include 'qikify-boosterkit' %}
+{% endif %}
+{% if content_for_header contains "tmenu\/async.js" or content_for_header contains "mobilemenu\/async.js" %}
+{% include 'qikify-navigator' %}
+{% endif %}

@@ -1,0 +1,54 @@
+{% for block in header.blocks %}
+    {% if block.type == "topbar" %}
+        {% assign show_phone_numb = block.settings.show_phone_numb %}
+        {% assign show_email = block.settings.show_email %}
+        {% assign show_social_links = block.settings.show_social_links %}
+        {% assign show_stores_page = block.settings.show_stores_page %}
+        {% assign show_language_switcher = block.settings.show_language_switcher %}
+        {% assign show_currency_switcher = block.settings.show_currency_switcher %}
+        {% assign show_divider = block.settings.show_divider %}
+        {% assign message = block.settings.alert_message %}
+
+        {% assign container = section.settings.container %}
+      <style>
+        @media (max-width: 1024px) {
+          .sf-topbar {
+            display: none;
+          }
+        }
+      </style>
+        <div class="sf-topbar py-3.5 relative bg-color-topbar-background text-color-topbar{% if show_divider %} border-b border-color-border{% endif %}">
+            <div class="{{ container }}">
+                <div class="sf__topbar-inner -mx-4 cursor-pointer flex justify-between items-center text-[15px]">
+                    <div class="flex items-center w-1/3">
+                        {% if show_phone_numb %}
+                            {% render 'header-contact-item__phone' %}
+                        {% endif %}
+                        {% if show_email %}
+                            {% render 'header-contact-item__email' %}
+                        {% endif %}
+                        {% if show_social_links %}
+                            {% render 'social-media-links', show_label: true %}
+                        {% endif %}
+                    </div>
+                    {% if message != blank %}
+                    <div class="flex items-center w-1/3 justify-center">{{ message }}</div>
+                    {% endif %}
+                    <div class="w-1/3 flex items-center justify-end">
+                        {% if show_stores_page %}
+                            {% render 'header-contact-item__store' %}
+                        {% endif %}
+                        {% if show_language_switcher %}
+                            {% render 'language-switcher' %}
+                        {% endif %}
+                        {% if show_currency_switcher %}
+                            {% render 'currency-switcher' %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% break %}
+    {% endif %}
+
+{% endfor %}

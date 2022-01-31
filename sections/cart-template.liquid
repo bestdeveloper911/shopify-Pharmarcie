@@ -1,0 +1,111 @@
+{%- capture page_title -%}
+    {{ 'cart.general.title' | t }}
+{%- endcapture -%}
+{% render 'page-title', title: page_title %}
+
+<div class="container">
+  <div class="scd__wrapper sf-cart pb-20" data-cart-wrapper>
+    {% if cart.item_count > 0 %}
+
+      {% render 'foxkit-cart-countdown' %}
+      {% render 'foxkit-cart-goal' %}
+
+      {%- assign primary_locale = '' -%}
+      {%- for locale in shop.published_locales -%}
+        {%- if locale.primary == true -%}
+          {%- assign primary_locale = locale.iso_code -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- capture form_action -%}
+        /checkout{%- if primary_locale != request.locale.iso_code -%}?locale={{request.locale.iso_code}}{%- endif -%}
+      {%- endcapture -%}
+
+      {%- if primary_locale != request.locale.iso_code -%}
+        {%- capture checkout_params -%}
+          ?locale={{request.locale.iso_code}}
+        {%- endcapture -%}
+      {%- endif -%}
+
+      <form action="{{form_action}}" method="post" novalidate class="checkout-form asdasd sf-cart__form scd__content">
+        <div class="sf-cart__table w-full">
+          <div class="sf-cart__table-head flex">
+            <div class="sf-cart__table-col sf-cart__table-product">{{ 'cart.label.product' | t }}</div>
+            <div class="sf-cart__table-col sf-cart__table-price">{{ 'cart.label.price' | t }}</div>
+            <div class="sf-cart__table-col sf-cart__table-quantity hidden md:block">{{ 'cart.label.quantity' | t }}</div>
+            <div class="sf-cart__table-col text-right sf-cart__table-subtotal hidden md:block">{{ 'cart.label.total' | t }}</div>
+          </div>
+
+          <div class="sf-cart__table-body">
+            {%- for item in cart.items -%}
+              {% render 'cart-line-item', item: item, index: forloop.index%}
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="flex justify-end">
+          <div class="sf-cart__summary relative" data-cart-summary>
+            {% render 'cart-addons' %}
+
+            {%- assign cart_discounts = 'template ' | split: ' ' -%}
+            {%- if cart.cart_level_discount_applications.size > 0 -%}
+              {%- assign cart_discounts = cart.cart_level_discount_applications -%}
+            {%- endif -%}
+            <div class="scd-item__discounts sf-cart__item-discounts{% if cart.cart_level_discount_applications.size == 0 %} hidden{% endif %}" data-discounts-wrapper>
+              <div class="sf-cart__summary-row text-right">
+                <span class="visually-hidden">{{ 'customer.order.discounts' | t }}</span>
+                <div data-discounts>
+                <ul class="scd-item__discounts-list" data-discounts-list>
+                  {%- for discount_application in cart_discounts -%}
+                    {% if discount_application.total_allocated_amount != blank %}
+                      <li class="scd-item__discounts-item">
+                        {% render 'icon', name: 'discount' %}
+                        <span data-cart-discount-title>{{- discount_application.title -}}&nbsp;(-<span data-cart-discount-amount>{{ discount_application.total_allocated_amount | money }}</span>)</span>
+                      </li>
+                    {% endif %}
+                  {%- endfor -%}
+                </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="sf-cart__summary-row sf-cart-subtotal" data-cart-subtotal>
+              <span class="sf-cart-subtotal__title">{{ 'cart.general.subtotal' | t }}</span>
+              <span class="sf-cart-subtotal__price font-medium" data-cart-subtotal-price>{{ cart.total_price | money }}</span>
+            </div>
+
+            {%- capture taxes_shipping_checkout -%}
+              {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+              {%- elsif cart.taxes_included -%}
+                {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
+              {%- elsif shop.shipping_policy.body != blank -%}
+                {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+              {%- else -%}
+                {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
+              {%- endif -%}
+            {%- endcapture -%}
+            <div class="sf-cart__shipping note text-right" data-shipping-note>{{ taxes_shipping_checkout }}</div>
+            <div class="sf-cart__buttons-container mt-5">
+              <div class="sf-cart__submit-controls">
+                <button type="submit" name="checkout" data-checkout class="w-full cart__submit sf__btn sf__btn-primary">
+                  {{ 'cart.general.checkout' | t | upcase }}
+                </button>
+              </div>
+              {%- if additional_checkout_buttons -%}
+                <div class="additional-checkout-buttons w-full">{{ content_for_additional_checkout_buttons }}</div>
+              {%- endif -%}
+            </div>
+            {% if settings.cart_drawer_trust_badge %}
+              <div class="scd__trust-badge mt-3">
+                <img src="{{ settings.cart_drawer_trust_badge | img_url: '1000x' }}" alt="Trust secure badge">
+              </div>
+            {% endif %}
+            <div class="scd__overlay inset-0"></div>
+          </div>
+        </div>
+      </form>
+    {% endif %}
+    {% render 'cart-empty-message' %}
+  </div>
+</div>

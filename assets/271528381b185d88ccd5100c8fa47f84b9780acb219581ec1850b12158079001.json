@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "required": true,
+  "option": "textWithLink",
+  "contentOption": {
+    "type": "popup",
+    "checkboxText": "I have read and agreed with terms and conditions.",
+    "linkText": "Click here to read more.",
+    "warningText": "Please agree with terms and conditions before proceeding",
+    "url": "https:\/\/pharmarcie-v2.myshopify.com\/policies\/terms-of-service",
+    "popupText": "Given the large quantity of products available on our site (last count around 24,000 SKUs), it may be that a product you order is not available for sale in the US and will be shipped from France.\n\nWe currently hold inventory in the US for over 3,000 of the top-selling products. In addition to those, we list an additional 22,000 products we will ship to you from France.\n\nThe shipping cost will be the same no matter where your product(s) is coming from:\n\n$6.99 for all orders under $100;\nFree shipping for all orders over $100.\n\nBut for you, the customer, the only difference is the time it will take for you to receive your product. \nWe take full responsibility for shipping costs and customs duties from France, as well as onward shipping in the United States.  So, you do not need to worry about any unwanted additional costs – we have you covered.\n\nIf you order 3 products, one of which is available in the US immediately, and 2 from France, we will immediately ship out to you the product available from the US, and then as quickly as possible the shipment from France.\n\nBut what do we mean by \"as quickly as possible\"?\nWe currently send shipments from France twice per week, and if needed we will increase this. Given the nature of our products, our shipments need to clear both US Customs and the FDA. On average, our shipments take 5 business days, door-to-door. But this varies from the 3 business days to 10 business days (both extremes). But generally, it is safe to say that you will get your order from France in 10 – 14 days.\n",
+    "popupTitle": "Shipping"
+  },
+  "displaySettings": {
+    "custom": false,
+    "colorPrimary": "000000",
+    "linkColor": "0051EF",
+    "size": 14,
+    "warningTextColor": "#BF4040"
+  }
+}

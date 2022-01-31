@@ -1,0 +1,11 @@
+{% if header.settings.contact_bar_text != blank %}
+    <div class="{{ box_size }} {{ justify | default: 'justify-center' }} flex items-center px-3 py-4">
+        <p class="mr-2">{{ header.settings.contact_bar_text | escape }}</p>
+
+        {% if header.settings.contact_bar_link != blank %}
+            <a href="{{ header.settings.contact_bar_link }}" class="underline">
+                {{ header.settings.contact_bar_link_text | escape }}
+            </a>
+        {% endif %}
+    </div>
+{% endif %}

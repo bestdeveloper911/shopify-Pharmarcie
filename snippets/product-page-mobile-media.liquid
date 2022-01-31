@@ -1,0 +1,31 @@
+{% assign aspect_ratio = product.featured_image.aspect_ratio | default: 1 %}
+<div class="product-mb__media product-page-mobile__slider{% if aspect_ratio < 1 %} px-5{% endif %}">
+    {% if product.media.size <= 1 %}
+        <div class="flex justify-center items-center">
+            {% render 'media', media: product.featured_media, render_by_image: true %}
+        </div>
+    {% else %}
+        <div class="swiper-container block relative">
+            <div class="swiper-wrapper mobile">
+                {% for media in product.media %}
+                    <div data-index="{{ forloop.index0 }}" class="swiper-slide sf-prod-media-item" data-media-type="{{ media.media_type }}">
+                        {% render 'media', media: media, aspect_ratio: product.featured_image.aspect_ratio %}
+                        <div class="zoom-in transition-all opacity-100 absolute z-10 right-5 bottom-2.5">
+                            {% render 'tooltip', type: 'zoom-in', class_name: 'sf__tooltip-left' %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% if section.settings.show_nav_media_mobile %}
+            {% render 'product-nav-media-mobile' %}
+        {% endif %} 
+        {% if section.settings.show_pagination_mobile %}
+        <div class="swiper-pagination"></div>
+        {% endif %}
+    {% endif %}
+  {% if section.settings.show_atwl %}
+    {% render 'tooltip', type: 'wishlist', class_name: 'sf__tooltip-top product-mb__atwl' %}
+  {% endif %}
+</div>
+ 

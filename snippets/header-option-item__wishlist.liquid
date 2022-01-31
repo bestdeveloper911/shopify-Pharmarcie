@@ -1,0 +1,37 @@
+{% if settings.wishlist_page != blank %}
+  {% assign url = pages[settings.wishlist_page].url %}
+{% else %}
+  {% assign url = '/pages/wishlist' %}
+{% endif %}
+
+{% assign wishlist_app = settings.wishlist_app %}
+{% if wishlist_app == 'growave' %}
+  {% if shop.customer_accounts_enabled %}
+    {% assign ssw_fave_enabled = 1 %}
+    {% if shop.metafields.ssw['fave_enabled'] %}
+      {% assign ssw_fave_enabled = shop.metafields.ssw['fave_enabled'] | plus: 0 %}
+    {% endif %}
+    {% if ssw_fave_enabled == 1 %}
+      <a class="ssw-link-fave-menu ssw-link-fave-menu-hide-count relative px-2 py-3.5" href="{{ url }}" aria-label="{{ shop.metafields.ssw.lang.my_faves }}">
+              <span class="sf__tooltip-item block sf__tooltip-bottom sf__tooltip-style-2">
+                {% render 'icon', name: 'star', size: 'medium' %}
+                <span class="sf__tooltip-content">{{ 'layout.wishlist.title' | t }}</span>
+              </span>
+        <span class="ssw-counter-fave-menu sf-wishlist-count" style="display:none">0</span>
+      </a>
+      <script defer>var sswFaveCounterMenuLoaded=true;</script>
+    {% endif %}
+  {% endif %}
+{% else %}
+  <a href="{{ url }}" class="{{ box_size | default: 'relative px-2 py-3.5' }}">
+    {% if display_by == 'icon' %}
+      <span class="sf__tooltip-item block sf__tooltip-bottom sf__tooltip-style-2">
+                {% render 'icon', name: 'star', size: 'medium' %}
+                <span class="sf__tooltip-content">{{ 'layout.wishlist.title' | t }}</span>
+            </span>
+    {% else %}
+      {{ 'layout.wishlist.title' | t }}
+    {% endif %}
+    <sup class="sf-wishlist-count font-medium"></sup>
+  </a>
+{% endif %}

@@ -1,0 +1,112 @@
+{%- assign sidebarType = section.settings.sidebar -%}
+{%- assign group_data = block.settings.filtergroup -%}
+{%- assign group_show = block.settings.show_filtergroup -%}
+{%- assign all_tags = collection.all_tags | downcase -%}
+{%- assign cur_tags = current_tags | downcase | replace: 'amp;', '' -%}
+{%- assign group_title = block.settings.title -%}
+{%- assign group_design = block.settings.design_filtergroup -%}
+{%- assign group_open = block.settings.open_filtergroup -%}
+{%- assign group_accordion = block.settings.use_accordion -%}
+{%- assign tags = block.settings.filtergroup | split: ',' -%}
+
+{%- assign array = '' -%}
+{%- assign tag_lang = '' -%}
+{%- for tag in tags -%}
+    {%- if tag contains '__' -%}
+        {%- assign value = tag | split: '__' | first -%}
+        {%- assign array = array | append: ',' | append: value -%}
+        {%- assign value = tag | split: '__' | last | strip -%}
+        {%- assign tag_lang = tag_lang | append: ',' | append: value -%}
+    {%- else -%}
+        {%- assign array = array | append: ',' | append: tag -%}
+        {%- assign tag_lang = tag_lang | append: ',' | append: '_empty_' -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- assign tags = array | split: ',' -%}
+{%- assign tag_lang = tag_lang | split: ',' -%}
+{% assign accordion = '' %}
+{%- assign open = '' -%}{%- if group_open -%}{%- assign open = 'open' -%}{%- endif -%}
+{%- assign accordion = '' -%}{%- unless group_accordion -%}{%- assign accordion = 'lg:pointer-events-none sf__no-accordion' -%}{%- endunless - %}
+{%- capture data -%}
+    {%- assign tag_size = 0 -%}
+    {%- for t in tags -%}
+        {%- assign tag = t | strip | downcase -%}
+        {%- assign checktag = '"' | append: tag | append: '"' -%}
+        {%- if all_tags contains checktag -%}
+            {%- assign tag_size = tag_size | plus: 1 -%}
+            {% assign activeClass = '' %}
+            {%- if cur_tags contains checktag -%}
+                {% assign activeClass = ' active' %} 
+            {%- endif -%}
+            <li class="sf__option-filter{{ activeClass }}{% if group_design == 'color' %} sf__tooltip-item sf__tooltip-top{% endif %}">
+                {%- capture string -%}
+                    {%- if tag_lang[forloop.index0] != '_empty_' -%}
+                        {{ tag_lang[forloop.index0] }}
+                    {%- else -%}
+                        {{ t | strip }}
+                    {%- endif -%}
+                {%- endcapture -%}
+                {%- assign oldtitle = 'Show products matching tag ' | append: tag -%}
+                {%- assign newtitle = group_title | append: ': ' | append: string -%}
+                {%- capture texture -%}{%- render 'get_swatch_texture', texture_name: string -%}{%- endcapture -%}
+                {%- capture texture_style -%}
+                    {%- if texture != '' -%}
+                        {{ texture | asset_url }}
+                    {%- endif -%}
+                {%- endcapture -%}
+                {%- if group_design == 'color' -%}
+                    {%- assign color = tag | handle -%}
+                    {%- assign colors = ',' | append: settings.product_colors | strip_newlines | downcase | append: ',' -%}
+                    {%- assign _tag = tag | downcase | strip -%}
+                    {%- assign _tag = ',' | append: _tag | append: ':' -%}
+                    {%- capture curcol -%}
+                        {%- if colors contains _tag -%}
+                            {{ colors | split: _tag | last | split: ',' | first | strip }}
+                        {%- endif -%}
+                    {%- endcapture -%}
+                    {%- capture c -%}
+                        {{ string | link_to_tag: tag | replace: oldtitle, '' }}
+                    {%- endcapture -%}
+                    {%- if texture_style != '' -%}
+                        {%- assign s = '<a class="sf__options-color' | append: '" style="background: url(' | append: texture_style | append: '); background-size: cover;" ' -%}
+                        {%- assign c = c | replace: '<a', s -%}
+                    {%- elsif curcol != '' -%}
+                        {%- assign s = '<a class="sf__options-color sf__color-' | append: color | append: '" style="background: ' | append: curcol | append: '" ' -%}
+                        {%- assign c = c | replace: '<a', s -%}
+                    {%- endif -%}
+                    {% assign tt = '<span class="sf__tooltip-content">' | append: string | append: '</span>' %}
+                    {{ c }}{{ tt }}
+                {%- elsif group_design == 'button' -%}
+                    {%- capture c -%}
+                        {{ string | link_to_tag: tag | replace: oldtitle, newtitle }}
+                    {%- endcapture -%}
+                    {%- if texture_style != '' -%}
+                        {%- assign s = '<a class="sf__options-color' | append: '" style="background: url(' | append: texture_style | append: ')" ' -%}
+                        {%- assign c = c | replace: '<a', s -%}
+                    {%- endif -%}
+                    {{ c }}
+                {%- else -%}
+                    {% assign string = '<span>' | append: string | append: '</span>' %}
+                    {{ string | link_to_tag: tag | replace: oldtitle, '' }}
+                {%- endif -%}
+            </li>
+        {%- endif -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{%- assign data = data | strip -%}
+{%- capture design -%}
+    {%- case group_design -%}
+        {%- when 'inrow' -%}sf__list-inline
+        {%- when 'button' -%}sf__options-swatch sf__button options-middle
+        {%- when 'button_rounded' -%}sf__options-swatch options-middle sf__button-rounded
+        {%- when 'color' -%}sf__options-swatch options-middle
+        {%- else -%}sf__list-row
+    {%- endcase -%}
+{%- endcapture -%}
+<div class="sf__accordion-item mb-8 {{ open }}{% if data == blank or group_show == false %} hidden {% endif %} {{ sidebars_toright }}">
+    <h6 class="sf__accordion-button {{ accordion }} mb-4 pr-4">{{ group_title }}</h6>
+    <div class="sf__accordion-content max-h-full" {%- if group_open or group_accordion == false -%}style="opacity: 1;"{%- endif -%}>
+        <ul class="{{ design | strip }} collection-filter-node">{{ data }}</ul>
+    </div>
+</div>
+

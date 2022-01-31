@@ -1,0 +1,29 @@
+{% comment %} on_sale {% endcomment %}
+{% assign variant = product.selected_or_first_available_variant %}
+{%- assign compare_at_price = variant.compare_at_price -%}
+{%- assign price = variant.price -%}
+{% assign on_sale = false %}
+{% if compare_at_price > price %}
+  {% assign on_sale = true %}
+{% endif %}
+
+<div class="sf-prod__info-wrapper">
+    <div class="sf-prod__info{% if on_sale %} sf-product--onsale{% endif %}">
+      {% render 'main-product-blocks', section: section, product: product %}
+
+      {%- for block in section.blocks -%}
+        {% if block.type == 'addons' and block.settings.show_ask_a_question %}
+          {% render 'form__ask-a-question' %}
+          {% break %}
+        {% endif %}
+      {%- endfor -%}
+
+      <div class="addons-block">
+        <div
+          id="fox-product-bundle-inside"
+          data-fox-app="true"
+          data-section-product-bundle
+        ></div>
+      </div>
+    </div>
+</div>

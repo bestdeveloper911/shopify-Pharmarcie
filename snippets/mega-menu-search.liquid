@@ -1,0 +1,33 @@
+<div class="sf-search-mb__overlay absolute w-full h-screen top-full transition-opacity duration-300 bg-black" style="--tw-bg-opacity: 0.3;">
+    <div class="bg-white py-3.5">
+        <div class="sf-search__popular px-4">
+            <span class="text-gray-400 mr-4">{{ 'general.search.popular_searches' | t }}</span>
+            {%- assign popular_queries = settings.popular_search_queries | split: ',' -%}
+            {% for qr in popular_queries %}
+                <a class="cursor-pointer underline mr-4 sf-search__popular-item"data-query="{{ qr | strip }}">{{ qr | strip }}</a>
+            {% endfor %}
+        </div>
+        <div class="sf-search__result mobile">
+            <div class="sf-search__result-heading text-gray-400 px-4 mb-2">
+                <span class="sf-search__count">10</span>
+                {{ 'general.search.results_for' | t }}
+                “<span class="sf-search__query text-black"></span>”
+            </div>
+            <div class="px-4">
+                {% for i in (1..8) %}
+                    <div class="hidden sf-search__result-item"></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="sf-search__result-empty hidden text-gray-400 text-2xl px-4 py-6">
+            {{ 'general.search.no_results' | t }}
+            “<span class="sf-search__query text-black"></span>”
+        </div>
+    </div>
+</div>
+
+{% style %}
+    .sf-header__mobile .sf-search__overlay {
+        height: calc(var(--window-inner-height, 100vh) - 3.25rem);
+    }
+{% endstyle %}

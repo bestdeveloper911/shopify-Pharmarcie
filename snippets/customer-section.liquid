@@ -1,0 +1,46 @@
+<div class="sf-customer-section fixed top-0 transition-transform duration-300 left-full h-screen w-full z-[70]">
+    <div class="sf-customer-section__inner w-full h-full bg-white p-4 relative">
+        <button class="absolute top-4 right-4 close-btn" area-label="Close header">
+            {% render 'icon', name: "times" %}
+        </button>
+        <div class="mt-8 customer-tabs sf-customer__forms">
+            <div class="py-2 tab-header">
+                <label class="singin sf-user-tab-label">
+                    <input type="radio" name="customer-tab" data-tab="signin" class="hidden signin" checked="true">
+                    <span class="sf-customer__tab-login">{{ 'layout.customer.log_in' | t }}</span>
+                    <span class="sf-customer__tab-reset hidden">{{ 'customer.recover_password.title' | t }}</span>
+                    <hr />
+                </label>
+                <label class="register sf-user-tab-label">
+                    <input type="radio" name="customer-tab" data-tab="register" class="hidden register">
+                    <span>{{ 'customer.register.title' | t }}</span>
+                    <hr />
+                </label>
+            </div>
+            <div class="w-full mt-6 tab-content signin">
+                <div class="sf-customer__login">
+                    {% render 'form__login' %}
+                </div>
+                <div class="sf-customer__reset-password hidden">
+                    <p class="mt-4 mb-2 text-color-secondary">{{ 'customer.recover_password.subtext' | t }}</p>
+                    {% render 'form__recover-password' %}
+                </div>
+            </div>
+            <div class="w-full mt-6 tab-content register hidden">
+                <p class="mb-6 text-color-secondary">
+                    {{ 'customer.register.description' | t }}
+                </p>
+                {% render 'form__register' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% style %}
+    .sf-customer-section .customer-tabs input:checked ~ hr {
+        display: block;
+    }
+    .sf-customer-section .customer-tabs input:checked ~ span {
+        color: black;
+    }
+{% endstyle %}

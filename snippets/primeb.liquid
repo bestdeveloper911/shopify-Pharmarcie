@@ -1,0 +1,111 @@
+{% assign HideAssets = hideAssets | default: 0 %}{% if HideAssets != '1' %}{% render 'prime-css' %}{% endif %}
+			{% assign primebMobileSize = primebMobileSize | default: 100 %}
+			{% assign primebTabletSize = primebTabletSize | default: 100 %}
+			{% assign primebProduct = product %}
+			{% assign primebCustId = customer.id %}
+			{% assign primebVarient = product.variants.size %}
+			{%- assign primebmoneyformat = shop.money_format | split: "{{" | last | remove: "}}" | strip | strip_html -%}
+			{% if primebmoneyformat == "amount_with_comma_separator" or primebmoneyformat == "amount_no_decimals_with_comma_separator" %}
+				{% assign primebProdPrice = product.price | money_without_currency | remove: "." | replace: ",", "." %}
+			{% else %} 
+				{% assign primebProdPrice = product.price | money_without_currency | remove: "," %}
+			{% endif %}
+			{% assign primebProdPrice = product.price | divided_by: 100.00 %}
+			{% assign primebCustomerTag = customer.tags | downcase %}
+			{% assign primebPublishedDate = product.published_at | date: "%s" %}
+			{% assign primebPublishDateDiff = "now" | date: "%s" | minus: primebPublishedDate %}
+			{% assign primebTemplate = primePageType | default: template | downcase %}
+			{% assign primebLanguage = request.locale.iso_code %}
+			{% assign primemetafield = primebProduct.metafields %}
+			{% assign primebProductTitle = primebProduct.title | downcase %}
+			{% assign primebProductType = primebProduct.type | downcase %}
+			{% assign primebProductVendor = primebProduct.vendor | downcase %}
+			{% assign primebShopifyTags = primebProduct.tags | downcase %}
+			{% assign primebProductWeight = product.variants.first.weight %}
+			{% assign primebUTC = "now" | date: "%s" %}
+			{% assign primebstartTime = "633880800"  %}
+			{% assign primebEndTime = "2053954800"  %}
+			{% assign primebMaxDisplayBadge = primebMaxDisplayBadge | default: 10 %}	
+			{% assign primebCreatedDateSec = primebProduct.created_at | date: "%s" %}
+			{% assign primebDateDiff = "now" | date: "%s" | minus: primebCreatedDateSec %}
+			{% assign primebCollectionIds = primebProduct.collections | map: "id" | default: 0  %}			
+			{% assign primebBadgeCounter = 1 %}
+			{% assign VariantCount = product.variants.size %}
+			{% assign SaleAmount    = 0 %}	
+			{% assign SalePercent   = 0 %}
+			{% assign primeGroup =  primebGroup %}
+			{% assign primebadgeLinks = primebLinks | default: 0 %} 
+			{% assign ProductSKU = product.selected_or_first_available_variant.sku | default: 0 %}
+			{% if primeGroup %} 
+				{% assign primeGroup =  primebGroup %} 
+			{% else %} 
+				{% assign primeGroup =  "1" %} 
+			{% endif %}
+            {% if primebProduct.price and primebProduct.compare_at_price %}
+				{% assign SaleAmount = primebProduct.compare_at_price | minus: primebProduct.price %}	
+				{% if SaleAmount > 0 %}
+					{% if primebmoneyformat == "amount_with_comma_separator" or primebmoneyformat == "amount_no_decimals_with_comma_separator" or  primebmoneyformat contains "amount_with_comma_separator" %}
+						{% assign SalePercent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | money_without_currency | replace: ",", "." | times: 100 | remove: ".0" | plus: 0 %}
+					{% elsif primebmoneyformat contains "amount_no_decimals" %} 
+						{% assign divisor = product.compare_at_price  | times: 1.0 %}
+						{% assign SalePercent = product.compare_at_price | minus: product.price | divided_by: divisor  | times: 100.0 | round %}
+					{% else %} 
+						{% assign SalePercent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | money_without_currency | times: 100 | remove: ".0" | plus: 0 %}
+					{% endif %}
+           		{% endif %}
+        	{% endif %}
+			{% assign Inventory = 0 %}
+			{% assign Inventory2 = 0 %}
+			{% assign PrimebVariantInventory = 0 %}
+			{% if passvariant.id %} 
+				{% assign PrimebVariantInventory = passvariant.inventory_quantity %}	
+			{% endif %}
+			{% for productVariant in primebProduct.variants %}
+				{% assign Inventory2 = productVariant.inventory_quantity | at_least: 0 %}
+				{% assign Inventory = Inventory | plus: Inventory2 %}			
+			{% endfor %}
+			
+			<div class="primeBadges outerprimeb{{product.id}}-{{primeGroup}} {{primebOuterClass}} prime-d-block" style="{{ primebOuterStyle }}" data-primeproductsid="{{product.id}}" data-primebOuterClass="{{primebOuterClass}}" data-primebOuterStyle="{{primebOuterStyle}}" data-primebInnerClass="{{primebInnerClass}}" data-primebInnerStyle="{{primebInnerStyle}}" data-primebGroup="{{primeGroup}}" >	
+  	{% comment %} Start Badge: 1 {% endcomment %}
+  	{% if primebBadgeCounter <= primebMaxDisplayBadge %}
+  	 {% assign isStartbShowBadge = false %} {% assign primebProductTags = "s,Ship_France_10-15" | split: "," %}{% assign isprimebProductTagFound0 = false %}
+						{% for tagName in primebProductTags %}
+							{% assign primebProductTagname = tagName | downcase %}
+							{% for shopifyrealtag in product.tags %}
+								{% assign primebProductTagshopify = shopifyrealtag | downcase %}
+								{% if primebProductTagshopify == primebProductTagname %}
+									{% assign isprimebProductTagFound0 = true %}
+									{% break %}
+								{% endif %}
+							{% endfor %}
+						{% endfor %}{% if product.metafields.prime.myordercount != blank %}
+							{% assign OrderCount = product.metafields.prime.myordercount.ordercount | default: 0 %}
+						    {% assign RecentSoldCount = product.metafields.prime.myordercount.recentcount | default: 0 %}
+						{% else  %} 
+							{% assign OrderCount = product.metafields.prime.ordercount | default: 0 %}
+							{% assign RecentSoldCount = product.metafields.prime.recentcount | default: 0 %}
+						{% endif %}{% if  true == isprimebProductTagFound0  and true %}{% assign isStartbShowBadge = true %}{% endif %}{% assign primebUTC 		= "now" | date: "%s" %}
+			{% assign primebUTC 		= primebUTC | plus: 0 %}
+			{% assign primebStartTime = 633880800  %}
+			{% assign primebEndTime = 2053954800  %}
+			{% if primebStartTime <= primebUTC and primebEndTime >= primebUTC %}{% assign Image = 'prime_8278.png'  %}{% assign ImageHeight = 'x22' %}{% assign Imagesize = Image | asset_img_url: 'master' %}{% if isStartbShowBadge == true %} 
+				{% assign primebadgeGroup = '1' %} 
+				{% if primeGroup == primebadgeGroup %}
+				{% assign primebBadgeCounter = primebBadgeCounter | plus: 1 %}{% assign lastbstring = '' %}<div class="primebDesktop {{primebInnerClass}} primeb-8278  "  data-tippy-content= 'France' data-countryselected= '' data-screensizeselected= ''  countryrule=1 onclick="redirectLinkbadge('','0','8278','1');" style="{{ primebInnerStyle }} " >
+
+    <div style="; color: transparent; font-size: 14px; line-height: 0px; max-width: 100%; padding: 0px; opacity: 1; background-color: transparent;"  >      
+        <div  class="badgetitle prime-height-adjust" data-defaultheight= '22' data-mobileheight= '0' data-tabletheight= '0' style="white-space: normal; overflow: hidden; text-align: center;">
+            <img class="primebImage" src="{{Imagesize}}" alt="badge" style="max-height: 22px;height:unset;" >
+         
+        </div>	   
+    </div>
+</div> 
+{% endif %}{% endif %}{% endif %}	{% endif %}
+	{% comment %} End Badge: 1 {% endcomment %}	
+
+
+    </div>
+		
+	{% if HideAssets != '1' %}{% render 'primeb-js' %}{% endif %}
+		
+

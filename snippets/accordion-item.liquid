@@ -1,0 +1,12 @@
+{% if title != blank and content != blank %}
+  <div class="sf-accordion-item" data-accordion-item {{ block.shopify_attributes }}>
+    <div class="sf-accordion-item__header" data-accordion-header>
+      <h4>{{ title }}</h4>
+    </div>
+    <div class="sf-accordion-item__content" data-accordion-content style="display: ">
+      <div class="prose">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+{% endif %}

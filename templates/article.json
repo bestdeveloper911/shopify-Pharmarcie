@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "main": {
+      "type": "article",
+      "blocks": {
+        "50469c40-b191-4cca-ac7c-6a6cd0c7b8b4": {
+          "type": "categories",
+          "settings": {
+            "title": "Categories",
+            "list_blog": ""
+          }
+        },
+        "bb3e6ad7-c917-47d9-9bce-5edf5ff286f6": {
+          "type": "recent_post",
+          "settings": {
+            "title": "Recent Post",
+            "sidebar_recent_blog_name": "mix-and-match",
+            "sidebar_recent_blog_count": "3",
+            "blog_show_tags": true,
+            "blog_show_author": false,
+            "blog_show_date": false,
+            "show_excerpt": false,
+            "truncate_excerpt": false,
+            "truncate": "15",
+            "truncate_last_symbols": "..."
+          }
+        },
+        "36be080e-5b28-4b62-b5a9-478c96b656e7": {
+          "type": "tags",
+          "settings": {
+            "title": "Tags"
+          }
+        },
+        "dcb13e8f-be87-42ed-b4b9-65da316b09a1": {
+          "type": "instagram",
+          "settings": {
+            "title": "Instagram",
+            "images_count": 6
+          }
+        }
+      },
+      "block_order": [
+        "50469c40-b191-4cca-ac7c-6a6cd0c7b8b4",
+        "bb3e6ad7-c917-47d9-9bce-5edf5ff286f6",
+        "36be080e-5b28-4b62-b5a9-478c96b656e7",
+        "dcb13e8f-be87-42ed-b4b9-65da316b09a1"
+      ],
+      "settings": {
+        "container": "container",
+        "sidebar_show": false,
+        "sidebar_position": "right_column",
+        "design": "layout1",
+        "blog_show_author": true,
+        "blog_show_date": true,
+        "blog_show_tags": true,
+        "blog_show_social": true,
+        "blog_show_related": false,
+        "blog_show_comment": false,
+        "show_related_articles": false,
+        "article_align_content": "text-left",
+        "article_show_tags": false,
+        "article_show_date": true,
+        "article_show_excerpt": false,
+        "article_show_button": false
+      }
+    },
+    "16418216503fe607dc": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Skin Care Products",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "rgba(0,0,0,0)",
+        "collection": "a-derma",
+        "product_to_show": 12,
+        "items_per_row": 5,
+        "item_gap": 30,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": true,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": true,
+        "button_type": "link",
+        "button_text": "view more",
+        "button_style": "sf__btn-primary",
+        "button_size": "sf__btn-small",
+        "infinite_load": false,
+        "max_page_load": 3,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16418216503fe607dc"
+  ]
+}

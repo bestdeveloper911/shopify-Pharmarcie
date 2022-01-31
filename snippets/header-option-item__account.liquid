@@ -1,0 +1,14 @@
+{% if shop.customer_accounts_enabled or shop.customer_accounts_optional %}
+{% if display_by == 'icon' %}
+    <a href="{{ routes.account_url }}" class="{{ box_size | default: 'px-2 py-3.5' }}">
+        <span class="sf__tooltip-item block sf__tooltip-bottom sf__tooltip-style-2">
+            {% render 'icon', name: 'user', size: 'medium' %}
+            <span class="sf__tooltip-content">{{ 'layout.customer.account' | t }}</span>
+        </span>
+    </a>
+{% else %}
+    <a href="{{ routes.account_url }}" class="{{ box_size }} px-4 py-5">
+        {{ 'layout.customer.account' | t }}
+    </a>
+{% endif %}
+{% endif %}

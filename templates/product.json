@@ -1,0 +1,226 @@
+{
+  "sections": {
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "settings": {
+        "container": "container",
+        "text_alignment": "left",
+        "hide_current": false,
+        "hide_on_mb": true
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_title": "Color"
+          }
+        },
+        "4c3888e1-ef66-407e-b95b-0867c6d9bc55": {
+          "type": "short_description",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_atc_button": true,
+            "show_dynamic_checkout": false
+          }
+        },
+        "2ba664a5-3428-4658-ace6-ab1de5b3a763": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "d51ad68e-3e5e-4fce-a5b0-36444dfda777": {
+          "type": "meta",
+          "settings": {
+            "show_collections": false,
+            "show_sku": false,
+            "show_vendor": true
+          }
+        },
+        "cef0f1d6-b9f0-44ea-84a1-51cec03ef88a": {
+          "type": "shipping",
+          "settings": {
+            "show_delivery_times": true,
+            "deliver_text": "Estimated Delivery:",
+            "deliver_days": "7",
+            "show_shipping_text": true,
+            "shipping_text": "<p><strong>Free Shipping: <\/strong>for all orders over $100<\/p>"
+          }
+        },
+        "bea55a50-d373-4b25-9e33-0e23a103c6e0": {
+          "type": "text",
+          "settings": {
+            "text": "Shipping from {{ product.metafields.my_fields.shipping_country.value }}",
+            "text_style": "body",
+            "ship_policy_btn_label": "Learn more about our Shipping Policy.",
+            "ship_policy_usa": "<p>We currently hold inventory in the USA and France.<\/p><p><\/p><p>If your order have products from both location, they will be shipped separately.<\/p><p><\/p><p>- Products available in <strong>USA <\/strong>will be shipped in <strong>3-5 days<\/strong>.<\/p><p>- Products available in <strong>France <\/strong>will be shipped in <strong>10-14 days<\/strong>. <\/p><p><br\/><strong>You will only pay for one shipping rate. <\/strong><\/p><p><\/p><p>We also take full responsibility for the shipping costs and customs duties from France to the United States. <\/p><p><\/p><p><a href=\"\/pages\/shipping-information\" title=\"Shipping & Returns\"><strong>Click here to read our Shipping Policy<\/strong><\/a><\/p>",
+            "ship_policy_france": "<p>We currently hold inventory in the USA and France.<\/p><p><\/p><p>If your order have products from both location, they will be shipped separately.<\/p><p><\/p><p>- Products available in <strong>USA <\/strong>will be shipped in <strong>3-5 days<\/strong>.<\/p><p>- Products available in <strong>France <\/strong>will be shipped in <strong>10-14 days<\/strong>. <\/p><p><br\/><strong>You will only pay for one shipping rate. <\/strong><\/p><p><\/p><p>We also take full responsibility for the shipping costs and customs duties from France to the United States. <\/p>"
+          }
+        },
+        "addons": {
+          "type": "addons",
+          "settings": {
+            "show_atcp": false,
+            "show_ask_a_question": false,
+            "show_social": false
+          }
+        },
+        "de0ae38b-06a6-48e7-b83b-f3ddc1227469": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "trust_badges_text": "<p>Shop more from<\/p>",
+            "trust_badges_image": "shopify:\/\/shop_images\/Bioderma.png",
+            "trust_badges_image_width": "33%",
+            "position": "below"
+          }
+        },
+        "c19fdb15-6113-4466-a030-bdce85ccbd76": {
+          "type": "custom_text",
+          "disabled": true,
+          "settings": {
+            "content": ""
+          }
+        },
+        "2c9c4531-0d6b-4594-bdcf-9e01bf2939a0": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "content": "",
+            "liquid": "",
+            "default_open": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "4c3888e1-ef66-407e-b95b-0867c6d9bc55",
+        "buy_buttons",
+        "2ba664a5-3428-4658-ace6-ab1de5b3a763",
+        "d51ad68e-3e5e-4fce-a5b0-36444dfda777",
+        "cef0f1d6-b9f0-44ea-84a1-51cec03ef88a",
+        "bea55a50-d373-4b25-9e33-0e23a103c6e0",
+        "addons",
+        "de0ae38b-06a6-48e7-b83b-f3ddc1227469",
+        "c19fdb15-6113-4466-a030-bdce85ccbd76",
+        "2c9c4531-0d6b-4594-bdcf-9e01bf2939a0"
+      ],
+      "settings": {
+        "container": "container",
+        "layout": "layout-1",
+        "show_atwl": false,
+        "show_nav_media_mobile": false,
+        "show_pagination_mobile": true,
+        "use_sticky_atc": false,
+        "use_sticky_atc_on_mobile": true,
+        "enable_dynamic_checkout": false,
+        "sticky_atc_wishtlist": false,
+        "sticky_atc_compare": false
+      }
+    },
+    "product-details-tabs": {
+      "type": "product-details-tabs",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "header": "Product Information"
+          }
+        },
+        "1c50e05e-fc4c-4122-b24b-74431a1185da": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "header": "Our Promise",
+            "content": "<p>Curabitur aliquet quam id dui posuere blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. <\/p>",
+            "content_page": ""
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "1c50e05e-fc4c-4122-b24b-74431a1185da"
+      ],
+      "settings": {
+        "container": "container",
+        "bg_color": "#f5f5f5",
+        "default_open": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "container": "container",
+        "heading": "You Might Also Like",
+        "limit": 20,
+        "columns": 5,
+        "column_gap": 30,
+        "enable_slider": true
+      }
+    },
+    "recent-viewed-products": {
+      "type": "recent-viewed-products",
+      "disabled": true,
+      "settings": {
+        "heading": "Recently Viewed Products",
+        "container": "container",
+        "columns": 4,
+        "column_gap": 30,
+        "enable_slider": true
+      }
+    },
+    "164313469131458b16": {
+      "type": "blog-posts",
+      "settings": {
+        "heading": "JINA'S BLOG",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container",
+        "background_color": "#ffffff",
+        "blog": "news",
+        "limit": 4,
+        "column": 4,
+        "column_gap": 30,
+        "mobile_gap": 10,
+        "article_image_aspect_ratio": "16\/9",
+        "article_align_content": "text-left",
+        "article_show_tags": false,
+        "article_show_date": true,
+        "article_show_excerpt": false,
+        "article_show_button": false,
+        "button_link": "",
+        "button_text": "READ MORE",
+        "button_style": "sf__btn-primary",
+        "button_size": "sf__btn-small",
+        "use_scroll_mobile": true,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "main",
+    "product-details-tabs",
+    "product-recommendations",
+    "recent-viewed-products",
+    "164313469131458b16"
+  ]
+}

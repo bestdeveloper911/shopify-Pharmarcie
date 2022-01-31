@@ -1,0 +1,33 @@
+{% assign images = 'image_1,image_2,image_3,image_4,image_5' | split: ',' %}
+<div class="flex items-center flex-wrap" {{ block.shopify_attributes }}>
+    <div class="brand-header__block relative w-full sm:w-6/12">
+        <div class="brand-header__gallery swiper-container">
+            <div class="swiper-wrapper">
+                {% for image in images %}
+                    {% assign img = block.settings[image] %}
+                    {% if img != blank %}
+                        <div class="brand-header__gallery-img swiper-slide">
+                            {% render 'responsive-image',
+                                    image: img,
+                                    image_class: 'transition-all duration-500 w-full'
+                            %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% render 'slider-controls', show_nav: false %}
+    </div>
+    <div class="brand-header__block w-full sm:w-6/12 sm:pl-24 mt-20 sm:mt-0">
+        <div class="brand-header__description">
+            {% if block.settings.logo != blank %}
+                <div class="brand-header__logo w-56 mb-10">
+                    {% render 'responsive-image', image: block.settings.logo %}
+                </div>
+            {% endif %}
+            <div class="rte prose text-color-subtext">
+                {{ block.settings.content }}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div>
+  <div class="max-w-full w-full">
+    {%- if show_vendor -%}
+      <span class="sf__pcard-vendor block uppercase text-xs mb-2 pt-4">{{ product.vendor }}</span>
+    {%- endif -%}
+
+    {%- capture link_class -%}
+      {% if settings.uppercase_prd_name %} uppercase{% endif %} {% if show_vendor %}mt-2{% else %}mt-3 lg:mt-5{% endif %}
+    {%- endcapture -%}
+    <a href="{{ product.url | within: collection }}" class="{{ link_class }} block mb-[5px] leading-normal sf__pcard-name font-medium hover:text-color-secondary">
+      {{ product.title | escape }}
+    </a>
+    {% if settings.show_review_badge %}
+      <div class="sf-pcard__reviews">
+        {% render 'product-reviews-app__badge', product: product %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% assign variant = product.selected_or_first_available_variant %}
+  <div class="sf__pcard-price leading-normal {% if variant.compare_at_price > variant.price %}price--on-sale{% endif %}">
+    {% render 'product-prices', product: product %}
+  </div>
+  {% render 'product-card-variant-option', product: product %}
+</div>

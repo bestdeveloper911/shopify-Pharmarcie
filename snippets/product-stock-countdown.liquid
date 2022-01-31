@@ -1,0 +1,45 @@
+{% assign stock_countdown = shop.metafields.foxecom-bs-kit.stock-countdown %}
+{% if stock_countdown != blank  and stock_countdown.active == true %}
+{% assign should_show = false %}
+
+{% assign applies_to = stock_countdown.applies_to %}
+{% assign target_collections = stock_countdown.target_collections %}
+{% assign target_products = stock_countdown.target_products %}
+
+{% if applies_to == 'specific_collections' %}
+    {% for collection in product.collections %}
+        {% if target_collections contains collection.handle %}
+            {% assign should_show = true %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if applies_to == 'specific_products' %}
+  {% assign product_handles = '' %}
+  {% for product in target_products %}
+    {% assign product_handles = product_handles | append: product.handle | append: ',' %}
+  {% endfor %}
+  {% if product_handles contains product.handle %}
+      {% assign should_show = true %}
+  {% endif %}
+{% endif %}
+
+{% if applies_to == 'all_products' %}
+  {% assign should_show = true %}
+{% endif %}
+
+    {% if should_show %}
+    <div class="prod__stock-countdown">
+        {% assign hour = "now" | date: "%I" %}
+        {%- assign stock_countdown_number = "{{stock_number}}" -%}
+        {%- assign random_countdown = product.id | slice: 12 | plus: 12 | minus: hour | modulo: 7 | plus: 1 -%}
+        {% assign number = random_countdown | prepend: '<strong>' | append: '</strong>' %}
+
+        <div class="prod__description">{{ stock_countdown.message | replace: stock_countdown_number , number }}</div>
+        <div class="my-3 h-[5px] bg-color-border rounded-[2px]">
+            <div data-stock-countdown-width="{{ random_countdown }}%" style="width: 100%;" class="psc__progress transition-all duration-300 rounded-[2px] h-full"></div>
+        </div>
+    </div>
+    {% endif %}
+{% endif %}

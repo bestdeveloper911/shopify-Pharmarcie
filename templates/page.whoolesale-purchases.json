@@ -1,0 +1,74 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {}
+    },
+    "16429844844379f8da": {
+      "type": "custom-content",
+      "blocks": {
+        "16429844845c227ace-0": {
+          "type": "text",
+          "settings": {
+            "title": "Interested in wholesale purchases?",
+            "subheading": "",
+            "text": "<p>We actively work with large sellers of French health & beauty products. We can source all your product needs at improved prices. We will handle shipping, including US Customs and FDA clearance. Rapid turnaround on all orders. We would love to hear from you and learn what your needs are and how we can help you.<\/p>",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "black",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "sf__btn-primary",
+            "button_size": "",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "16429844845c227ace-0"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "WHOLESALE PURCHASES",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "gap": 30,
+        "use_scroll_mobile": false,
+        "gap_mobile": 16,
+        "custom_class": ""
+      }
+    },
+    "acerill_custom_forms": {
+      "type": "apps",
+      "blocks": {
+        "acerill_custom_forms_block": {
+          "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/custom-form\/830f910d-3579-44cb-9d18-92197bb5bd98",
+          "settings": {
+            "formId": "2798fa62-f5d8-4bda-9900-61da53fd9eb8",
+            "behavior": "standard"
+          }
+        }
+      },
+      "block_order": [
+        "acerill_custom_forms_block"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "background_color": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16429844844379f8da",
+    "acerill_custom_forms"
+  ]
+}

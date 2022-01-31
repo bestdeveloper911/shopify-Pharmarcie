@@ -1,0 +1,30 @@
+<div class="quantity-input h-[46px] flex border border-color-border rounded {{ class }}">
+    <button
+            class="quantity-input__button flex items-center justify-center h-[46px] w-[46px]"
+            type="button"
+            aria-label="{{ 'products.product.decrease_quantity' | t: title: product.title }}"
+            data-quantity-selector="decrease"
+            data-product-id="{{ product.id }}"
+    >
+        {% render 'icon', name: 'minus', size: 'extra-small' %}
+    </button>
+    <input
+            class="quantity-input__element w-10 text-center flex-grow flex-shrink appearance-none"
+            type="number"
+            name="quantity"
+            value="1"
+            min="1"
+            aria-label="{{ 'products.product.product_quantity' | t }}"
+            data-quantity-input
+            data-product-id="{{ product.id }}"
+    >
+    <button
+            class="quantity-input__button flex items-center justify-center h-[46px] w-[46px]"
+            type="button"
+            aria-label="{{ 'products.product.increase_quantity' | t: title: product.title }}"
+            data-quantity-selector="increase"
+            data-product-id="{{ product.id }}"
+    >
+        {% render 'icon', name: 'plus', size: 'extra-small' %}
+    </button>
+</div>

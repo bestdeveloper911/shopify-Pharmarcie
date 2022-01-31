@@ -1,0 +1,101 @@
+{% paginate customer.addresses by 5 %}
+{% for address in customer.addresses %}
+<div data-address class="sf-customer__address mt-20 mb-24">
+    <div class="sf-customer__address-info">
+        <h3 class="font-semibold text-xl pb-3">
+            {{ address.address1 }}
+            {% if address == customer.default_address %}
+                <span>({{ 'customer.addresses.default' | t }})</span>
+            {% endif %}
+        </h3>
+
+        <div class="flex border-b border-color-border py-5">
+            <div class="w-1/2">
+                {{ 'customer.addresses.name' | t }}
+            </div>
+            <div class="w-1/2">
+                <span class="text-color-secondary">{{ address.name }}</span>
+            </div>
+        </div>
+        <div class="flex border-b border-color-border py-5">
+            <div class="w-1/2">
+                {{ 'customer.account.email' | t }}
+            </div>
+            <div class="w-1/2">
+                <span class="text-color-secondary">{{ customer.email }}</span>
+            </div>
+        </div>
+        <div class="flex border-b border-color-border py-5">
+            <div class="w-1/2">
+                {{ 'customer.addresses.company' | t }}
+            </div>
+            <div class="w-1/2">
+                <span class="text-color-secondary">{{ address.company }}</span>
+            </div>
+        </div>
+        <div class="flex border-b border-color-border py-5">
+            <div class="w-1/2">
+                {{ 'customer.addresses.address1' | t }}
+            </div>
+            <div class="w-1/2">
+                <span class="text-color-secondary">{{ address.address1 }}</span>
+                {%- assign address2 = address.address2 | strip -%}
+                {%- if address2 != '' -%}
+                    <span class="text-color-secondary">, {{ address2 }}</span>
+                {%- endif -%}
+            </div>
+        </div>
+        <div class="flex border-b border-color-border py-5">
+            <div class="w-1/2">
+                {{ 'customer.addresses.country' | t }}
+            </div>
+            <div class="w-1/2">
+                <span class="text-color-secondary">{{ address.country }}</span>
+                {%- assign province = address.province | strip -%}
+                {%- if province != '' -%}
+                    <span class="text-color-secondary">, {{ province }}</span>
+                {%- endif -%}
+            </div>
+        </div>
+        <div class="flex border-b border-color-border py-5">
+            <div class="w-1/2">
+                {{ 'customer.addresses.zip' | t }}
+            </div>
+            <div class="w-1/2">
+                <span class="text-color-secondary">{{ address.zip }}</span>
+            </div>
+        </div>
+        <div class="flex border-b border-color-border py-5">
+            <div class="w-1/2">
+                {{ 'customer.addresses.phone' | t }}
+            </div>
+            <div class="w-1/2">
+                <span class="text-color-secondary">{{ address.phone }}</span>
+            </div>
+        </div>
+        <div class="flex mt-6">
+            <button type="button" data-address-toggle class="mr-5 sf-customer-btn__edit sf__btn sf__btn-primary">
+                {{ 'customer.addresses.edit' | t }}
+            </button>
+            <form
+                class="sf-customer-form__delete sf__btn-secondary"
+                data-address-delete-form method="post" action="/account/addresses/{{ address.id }}"
+                data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+            >
+                <input type="hidden" name="_method" value="delete" />
+                <button type="submit">
+                    {{ 'customer.addresses.delete' | t }}
+                </button>
+            </form>
+        </div>
+    </div>
+
+    {% render 'form__address', new_or_edit: 'edit', address: address %}
+</div>
+{% endfor %}
+
+{% if paginate.pages > 1 %}
+{% render 'pagination' %}
+{% endif %}
+
+{% endpaginate %}

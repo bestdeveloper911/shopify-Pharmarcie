@@ -1,0 +1,215 @@
+<div 
+  class="sf-cart__item flex" 
+  data-variant-id="{{ item.variant_id }}" 
+  data-line-item-index="{{ forloop.index }}"
+  data-line-key="{{ item.key }}" 
+  data-product-id="{{ item.product_id }}" 
+  data-cart-item
+>
+  <div class="sf-cart__table-col sf-cart__table-product">
+    <div class="sf-cart__item-product">
+      {%- if item.image -%}
+        <div class="sf-cart__item-product-image">
+          {% render 'responsive-image', image: item.image, wrapper_class: "sf-cart__item-product-image" %}
+        </div>
+      {%- endif -%}
+      <div class="sf-cart__item-product-info">
+        <div class="sf-cart__item-product-title">
+          <a href="{{ item.url }}" data-role="product-title">
+            {{ item.product.title }}
+          </a>
+        </div>
+
+        {%- assign variant_options = 'template ' | split: ' ' -%}
+        {%- if item.product.has_only_default_variant != true -%}
+          {%- assign variant_options = item.options_with_values -%}
+        {%- endif -%}
+        {%- assign property_size = item.properties | size -%}
+
+        {%- assign line_item_detail_class = '' -%}
+        {%- if item.product.has_only_default_variant and property_size == 0 and item.selling_plan_allocation == nil -%}
+          {%- assign line_item_detail_class = 'hidden' -%}
+        {%- endif -%}
+
+        <ul 
+          class="sf-cart__item-product-details text-color-subtext {{ line_item_detail_class }}" 
+          data-cart-item-details aria-label="{{ 'cart.label.product_details' | t }}"
+        >
+          {%- for option in variant_options -%}
+            <li 
+              class="sf-cart__item--variant-option {% if item.product.has_only_default_variant %}hidden{% endif %}" 
+              data-cart-item-option
+            >
+              {{ option.name }}: {{ option.value }}
+            </li>
+          {%- endfor -%}
+
+          <li 
+            class="sf-cart__item-property {% if item.selling_plan_allocation == empty %} hidden {% endif %}"
+            data-cart-item-selling-plan-name
+          >
+            {{ item.selling_plan_allocation.selling_plan.name }}
+          </li>
+
+          {%- comment -%}
+            Optional, loop through custom product line items if available
+
+            Line item properties come in as having two parts. The first part will be passed with the default form,
+            but p.last is the actual custom property and may be blank. If it is, don't show it.
+
+            For more info on line item properties, visit:
+              - http://docs.shopify.com/support/your-store/products/how-do-I-collect-additional-information-on-the-product-page-Like-for-a-monogram-engraving-or-customization
+          {%- endcomment -%}
+
+          {%- assign properties = 'template ' | split: ' ' -%}
+          {%- if property_size > 0 -%}
+            {%- assign properties = item.properties -%}
+          {%- endif -%}
+
+          {%- for p in properties -%}
+            {%- assign property_first_char = p.first | slice: 0 -%}
+            <li 
+              class="sf-cart__item-property {% if property_size == 0 or p.last == blank or property_first_char == '_' %}hidden{% endif %}" 
+              data-cart-item-property
+            >
+              <span class="sf-cart__item-label" data-cart-item-property-name>{{ p.first }}: </span>
+
+              {%- comment -%}
+                Check if there was an uploaded file associated
+              {%- endcomment -%}
+              <span data-cart-item-property-value>
+                {%- if p.last contains '/uploads/' -%}
+                  <a href="{{ p.last }}" data-role="product-upload" target="_blank">{{ p.last | split: '/' | last }}</a>
+                {%- else -%}
+                  {{ p.last }}
+                {%- endif -%}
+              </span>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <button 
+          class="scd-item__remove" 
+          data-variant-id="{{ item.variant_id }}" 
+          data-item-index="{{ index }}" 
+          data-line-key="{{ item.key }}"
+        >
+          {{ 'cart.general.remove' | t }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sf-cart__table-col sf-cart__table-price">
+    {%- assign has_discount = false -%}
+    {%- if item.original_price != item.final_price -%}
+      {%- assign has_discount = true -%}
+    {%- endif -%}
+
+    <div class="sf-cart__item-prices">
+      {%- comment -%}
+          Markup template for discount item
+        {%- endcomment -%}
+      <div class="sf-cart__item-discount-prices {% unless has_discount %}hidden{% endunless %}">
+        <p class="sf-cart__item--regular-price">
+          <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+          <s>{{ item.original_price | money }}</s>
+        </p>
+        <p class="sf-cart__item--final-price">
+          <span class="visually-hidden">{{ 'products.product.sale_price' | t }}</span>
+          <span class="order-discount">{{ item.final_price | money }}</span>
+        </p>
+      </div>
+
+      {%- comment -%}
+        Markup template for regular price item
+      {%- endcomment -%}
+      <div {% if has_discount %}class="hidden"{% endif %}>
+        <p>
+          <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+          {{ item.original_price | money }}
+        </p>
+      </div>
+
+      {%- comment -%}
+        Markup template for unit price
+      {%- endcomment -%}
+      <div {% unless item.unit_price_measurement %}class="hidden"{% endunless %}>
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.unit_price_label' | t }}</span>
+        <span class="price-unit-price">
+          {%- capture unit_price_separator -%}
+            <span aria-hidden="true">/</span>
+            <span class="visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
+          {%- endcapture -%}
+
+          {%- capture unit_price_base_unit -%}
+            {%- if item.unit_price_measurement.reference_value != 1 -%}
+              {{- item.unit_price_measurement.reference_value -}}
+            {%- endif -%}
+            {{ item.unit_price_measurement.reference_unit }}
+          {%- endcapture -%}
+
+          <span data-unit-price>{{ item.unit_price | money }}</span>
+          {{- unit_price_separator -}}
+          <span data-unit-price-base-unit>{{- unit_price_base_unit -}}</span>
+        </span>
+      </div>
+    </div>
+
+    {%- assign item_discounts = 'template ' | split: ' ' -%}
+    {%- if item.line_level_discount_allocations != blank -%}
+      {%- assign item_discounts = item.line_level_discount_allocations -%}
+    {%- endif -%}
+
+    <ul 
+      class="scd-item__discounts sf-cart__item-discounts {% if item.line_level_discount_allocations == blank %} hidden{% endif %}" 
+      aria-label="{{ 'customer.order.discount' | t }}" 
+      data-cart-item-discount-list
+    >
+      {%- for discount_allocation in item_discounts -%}
+        <li class="order-discount__item" data-cart-item-discount>
+          {% render 'icon', name: 'discount' %}
+          <span data-cart-item-discount-title>
+            {{- discount_allocation.discount_application.title -}}
+          </span> (-<span data-cart-item-discount-amount>{{ discount_allocation.amount | money }}</span>)
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    <div class="sf-cart__quantity mt-2 md:hidden">
+      <div class="flex items-center justify-end">
+        <span class="mr-2 text-sm hidden sm:block">{{ 'cart.label.qty' | t }}</span>
+        {% render 'cart-item__qty-btn', item: item %}
+      </div>
+    </div>
+  </div>
+
+  <div class="sf-cart__table-col sf-cart__table-quantity hidden md:block">
+    {% render 'cart-item__qty-btn', item: item %}
+  </div>
+
+  <div class="sf-cart__table-col sf-cart__table-subtotal text-right hidden md:block">
+    {%- comment -%}
+      Markup template for discount item
+    {%- endcomment -%}
+    <div class="sf-cart__item-discount-prices{% unless item.original_line_price != item.final_line_price %} hidden{% endunless %}">
+       <p class="sf-cart__item--regular-price">
+        <span class="visually-hidden">{{ 'cart.label.regular_total' | t }}</span>
+        <s data-cart-item-original-price>{{ item.original_line_price | money }}</s>
+      </p>
+      <p class="sf-cart__item--final-price">
+        <span class="visually-hidden">{{ 'cart.label.discounted_total' | t }}</span>
+        <span class="order-discount" data-cart-item-final-price>{{ item.final_line_price | money }}</span>
+      </p>
+    </div >
+
+    {%- comment -%}
+      Markup template for regular price item
+    {%- endcomment -%}
+    <div {% if item.original_line_price != item.final_line_price %}class="hidden" {% endif %}>
+      <span class="font-medium scd-item__original_line_price" data-cart-item-original-price>
+        {{ item.original_line_price | money }}
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="mt-16 mega-menu-customer">
+    {% if shop.customer_accounts_enabled or shop.customer_accounts_optional %}
+    <div class="block xl:hidden mb-16 p-4">
+        <h2 class="font-medium text-xl mb-6">{{ 'customer.account.title' | t }}</h2>
+        {% if customer %}
+            <a href="{{ routes.account_url }}" class="w-full py-3 mb-3 rounded-md flex items-center">
+                <div class="flex flex-grow">
+                    {% render 'icon', name: 'user' %}
+                    <span class="ml-2">{{ customer.first_name }}</span>
+                </div>
+                {% render 'icon', name: 'chevron-right', size: 'medium' %}
+            </a>
+            <button class="w-full text-center rounded-md border border-black">
+                <a href="/account/logout" class="block p-3">{{ 'customer.account.log_out' | t }}</a>
+            </button>
+        {% else %}
+            <button
+                class="sf__btn sf__btn-primary mb-3 my-account-btn w-full signin"
+                data-tab="signin"
+            >
+                {{ 'layout.customer.log_in' | t }}
+            </button>
+            <button
+                class="sf__btn sf__btn-secondary my-account-btn w-full register"
+                data-tab="register"
+            >
+                {{ 'customer.register.title' | t }}
+            </button>
+            {% render 'customer-section' %}
+        {% endif %}
+    </div>
+    {% endif %}
+    {% if section.settings.show_language_switcher or section.settings.show_currency_switcher %}
+    <div class="flex">
+        {% if section.settings.show_language_switcher %}
+          {% render 'language-switcher', box_size: 'block xl:hidden py-3.5', pos: 'top' %}
+        {% endif %}
+        {% if section.settings.show_currency_switcher %}
+          {% render 'currency-switcher', box_size: 'block xl:hidden py-3.5', pos: 'top' %}
+        {% endif %}
+    </div>
+    {% endif %}
+</div>

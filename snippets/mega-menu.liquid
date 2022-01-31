@@ -1,0 +1,62 @@
+{% assign menu = mobile_menu %}
+{% if mobile_menu == blank %}
+  {% assign menu = main_menu %}
+{% endif %}
+
+<div
+    style="--tw-bg-opacity: 0;"
+    class="sf-menu-wrapper sf-menu-wrapper-mobile hidden fixed z-[80] inset-0 transition-colors duration-300 bg-black"
+>
+    <div class="sf-menu__content transition-transform -translate-x-full duration-300 md:w-[450px] z-50 bg-white text-black overflow-x-hidden h-full overflow-y-scroll">
+        <div class="flex flex-col">
+            <div class="sf-menu-content flex-grow flex flex-col justify-between transition-all opacity-0 opacity-100 duration-300">
+                <div class="w-full sf-menu-links pt-8">
+                    {% for link in linklists[menu].links %}
+                        {% if link.links != blank %}
+                            <li class="list-none sf-link" data-url="{{ link.url }}">
+                                <button class="w-full px-4 py-3 flex items-center justify-between">
+                                    <span>{{ link.title }}</span>
+                                    {% render 'icon', name: 'chevron-right', size: 'small' %}
+                                </button>
+                                <div class="sf-sub-links hidden absolute inset-y-0 bg-white flex-col left-full w-full">
+                                    <div class="h-full overflow-y-scroll">
+                                        <button class="back p-4 font-medium flex items-center ">
+                                            {% render 'icon', name: 'arrow-left', size: 'small' %}
+                                            <span class="ml-3">Back</span>
+                                        </button>
+                                        <ul class="pb-4">
+                                            {% render 'mega-menu-link' for link.links as link %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        {% else %}
+                            {% render 'mega-menu-link' with link as link %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% if section.settings.b_menu != blank %}
+                    <div class="bottom-menu-wrapper">
+                        {% for link in linklists[section.settings.b_menu].links %}
+                            <li class="list-none">
+                                <a href="{{ link.url }}" class="block px-4 py-3 ">
+                                    {{ link.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                        {% if section.settings.show_ask_to_jina %}
+                                <a href="{{ section.settings.ask_link }}" class="block px-4 py-3 ask_support">
+                                    {% if section.settings.ask_jina_image != blank %}
+                                        <img src="{{ section.settings.ask_jina_image | img_url: '500x' }}" alt="" style="width:{{ section.settings.mob_width }}">
+                                    {% else %}
+                                        Ask Jina
+                                    {% endif %}
+                                </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                {% render 'mega-menu-customer', section: section %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,953 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+
+<script type="text/javascript">
+    
+    var existingScript = document.getElementById('primebPopper');
+  	if (!existingScript) {
+
+		var country = 'primebadgecountry';
+        var primebcountryName = '';
+		const scriptpopperb = document.createElement('script');
+		scriptpopperb.src = 'https://unpkg.com/popper.js@1';
+		scriptpopperb.id = 'primebPopper';
+		document.body.appendChild(scriptpopperb);
+
+		setTimeout(function(){ 
+			const scripttippyb = document.createElement('script');
+			scripttippyb.src = 'https://unpkg.com/tippy.js@5';
+			scripttippyb.id = 'primebTippy';
+			document.body.appendChild(scripttippyb);
+
+            
+		}, 500);
+
+        setTimeout(function(){ 
+            checkprimebjquery();
+        }, 1000);
+
+  	}
+
+    function checkprimebjquery() {
+        if (window.jQuery) {
+            checkVariantInventory('{{product.selected_or_first_available_variant.title}}',"first");
+
+            $(document).on("click", ".variants-ui__option-value-name", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    setTimeout(function(){ 
+                        optionMap = $('.variants-ui__option-values').attr("data-variant-option-chosen-value");
+                        checkVariantInventory(optionMap,"first");
+                    }, 100);
+                }
+            });
+            
+            $(document).on("change", ".single-option-selector", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".single-option-selector").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("change", ".ProductForm__Option select", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".ProductForm__Option select").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("click", ".tt-options-swatch li", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".tt-options-swatch li").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("click", ".swatch-element", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".swatch-element").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("change", ".form__input--select", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".form__input--select").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("change", ".sgl-opt-selector-product-template", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".sgl-opt-selector-product-template").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("click", ".tt-options-swatch li", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".tt-options-swatch li").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("change", ".product-option-value-item", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".product-option-value-item").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("click", ".clickyboxes a", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".clickyboxes a").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("change", "[data-product-options-container] .form-field-input", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $("[data-product-options-container] .form-field-input").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("change", "#data-product-option-0", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $("#data-product-option-0").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("click", ".product-options__section .active", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".product-options__section .active").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("click", ".product-options__value", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".product-options__value").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("click", ".variant-input", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".variant-input").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("change", ".product-form__single-selector", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".product-form__single-selector").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("click", ".gt_swatches--select.gf_active", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".gt_swatches--select.gf_active").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("click", ".nt-swatch", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".nt-swatch").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("change", ".disclosure--input", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                    $(".disclosure--input").each(function(key) {
+                        optionMap[key] = $(this).val();
+                    });
+                    checkVariantInventory(optionMap);
+                }
+            });
+
+            $(document).on("click", ".product-form__input input", function() {
+                var optionMap = [];
+                if(optionMap.length == 0){
+                $(".product-form__input input[type=radio]:checked").each(function(key) {
+                    optionMap[key] = $(this).val();
+                });
+                checkVariantInventory(optionMap);
+                }
+            });
+
+        }else{
+            setTimeout(function() { checkprimebjquery() }, 2000);
+        }
+    }
+  	
+      
+    // document.addEventListener('DOMContentLoaded', (event) => {
+    //     primebCountdownTimer();
+    //     resizeFunction();
+    //     document.getElementById("prime-modal-close").onclick = function() {mymodalprimeb()};
+    //     window.onclick = function(event) {
+    //         if (event.target.classList[1] == 'prime-modal-open') {
+    //             mymodalprimeb();
+    //         }
+    //     }
+    // });
+
+    window.addEventListener('load', (event) => {
+        primebCountdownTimer();
+        resizeFunction();
+        
+        document.getElementById("prime-modal-close").onclick = function() {mymodalprimeb()};
+        window.onclick = function(event) {
+            if (event.target.classList[1] == 'prime-modal-open') {
+                mymodalprimeb();
+            }
+        }
+    });
+
+    function expdeliverydate(value,count) {
+        var weekdays = '6,0';
+        var dateformatselected = 'dddd, MMMM D';
+        var datelang = 'en';
+        var primebTextdate = document.getElementsByClassName('primebText');
+        var realvalue = value;
+        var pos = realvalue.indexOf("[[today");
+        var pos2 = realvalue.indexOf("]]");
+        var startres = realvalue.slice(pos+8, pos2);
+        realvalue = realvalue.replace("[[today,", "" );
+        realvalue = realvalue.replace("]]", "" );
+        var pos3 = realvalue.indexOf("[[today");
+        var pos4 = realvalue.indexOf("]]");
+        var endres = realvalue.slice(pos3+8, pos4);
+        realvalue = realvalue.replace("[[today,", "" );
+        realvalue = realvalue.replace("]]", "" );
+        var getlang = startres.split(",");
+        var wrongdays = weekdays.split(",");
+        // var days = {sun:0,mon:1,tue:2,wed:3,thu:4,fri:5,sat:6};
+        var startDate = new Date(new Date().getTime()+(parseInt(startres)*24*60*60*1000));
+        var today = new Date(new Date().getTime());
+        var firstinc=0;
+        while (today <= startDate) {
+            var getday = String(today.getDay());
+            if(wrongdays.indexOf(getday) != -1){
+            startDate.setDate(startDate.getDate() + 1);
+            firstinc++;
+            }
+            today.setDate(today.getDate() + 1);
+        }
+        var setlang = 'en';
+        if(getlang.length > 1){
+            setlang = getlang[1];
+        }
+        moment.locale(setlang);
+        value = value.replace("[[today,"+startres+"]]", moment(startDate).locale(setlang).format(dateformatselected));
+        // value = value.replace("[[today,"+startres+"]]", moment(startDate).format(dateformatselected));
+
+        var extradays = firstinc+parseInt(endres);
+        var endDate = new Date(new Date().getTime()+(extradays*24*60*60*1000));
+        var todayend = startDate;
+        var secinc=0;
+        while (todayend <= endDate) {
+            var getday = String(todayend.getDay());
+            if(wrongdays.indexOf(getday) != -1){
+            endDate.setDate(endDate.getDate() + 1);
+            secinc++;
+            }
+            todayend.setDate(todayend.getDate() + 1);
+        }
+        value = value.replace("[[today,"+endres+"]]", moment(endDate).locale(setlang).format(dateformatselected));
+        // value = value.replace("[[today,"+endres+"]]", moment(endDate).format(dateformatselected));
+        primebTextdate[count].innerHTML = value;
+      	var getchild = primebTextdate[count].getElementsByClassName('prime-counter');
+        if(getchild[0]){
+            getchild[0].classList.remove("prime-counter");
+        }
+    }
+
+
+    function checkVariantInventory(optionMap,myfirstone='') {
+        var productname = '{{product.handle}}';  
+        var variantproductid = '{{product.id}}';   
+        var mydomclass = document.getElementsByClassName('primebVariantInventory');   
+        if(mydomclass.length > 0){
+            if(optionMap.length > 0){  
+                var realval = '';
+                if(myfirstone == "first"){
+                    realval = optionMap;
+                }else{
+                    for(var i = 0; i < optionMap.length; i++){
+                        var spaces = ' / ';
+                        if(i == 0){
+                            spaces = '';
+                        }
+                        realval += spaces+optionMap[i];
+                    }
+                }
+                
+                var primeBadgesAll = document.getElementsByClassName('primeBadges');
+                for (var i = 0; i < primeBadgesAll.length; i++) {
+                    var primebOuterClass = primeBadgesAll[i].getAttribute('data-primebOuterClass');
+                    var primebOuterStyle = primeBadgesAll[i].getAttribute('data-primebOuterStyle');
+                    var primebInnerClass = primeBadgesAll[i].getAttribute('data-primebInnerClass');
+                    var primebInnerStyle = primeBadgesAll[i].getAttribute('data-primebInnerStyle');
+                    var primebGroup = primeBadgesAll[i].getAttribute('data-primebGroup');
+                    var primebProductId = primeBadgesAll[i].getAttribute('data-primeproductsid');
+                    if(primebProductId == variantproductid){
+                        hitprimebpage(productname,variantproductid,primebOuterClass,primebOuterStyle,primebInnerClass,primebInnerStyle,primebGroup,realval)
+                    }
+                }
+            }
+        }
+    }
+
+
+    function hitprimebpage(productname,variantproductid,primebOuterClass,primebOuterStyle,primebInnerClass,primebInnerStyle,primebGroup,realval) {
+        
+        if(primebGroup == 1){
+			var urlhit = productname+'/?view=primebvariant&outerclass=='+primebOuterClass+'&outerstyle=='+primebOuterStyle+'&innerclass=='+primebInnerClass+'&innerstyle=='+primebInnerStyle+'&group==1&page=='+realval;
+        }else if(primebGroup == 2){
+			var urlhit = productname+'/?view=primebvarianttwo&outerclass=='+primebOuterClass+'&outerstyle=='+primebOuterStyle+'&innerclass=='+primebInnerClass+'&innerstyle=='+primebInnerStyle+'&group==2&page=='+realval;
+        }else{
+            var urlhit = productname+'/?view=primebvariantthree&outerclass=='+primebOuterClass+'&outerstyle=='+primebOuterStyle+'&innerclass=='+primebInnerClass+'&innerstyle=='+primebInnerStyle+'&group==3&page=='+realval;
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", urlhit, true);
+        xhr.onreadystatechange  = function() {
+            if (this.readyState === XMLHttpRequest.DONE) {
+                if (this.status === 200) {
+                    if(this.responseText == 0){
+                        $('.outerprimeb'+variantproductid+'-'+primebGroup+' .primebText .primebVariantInventory').html("0");
+                        $('.outerprimeb'+variantproductid+'-'+primebGroup+' .prime-counter').removeClass("prime-counter");
+                    }else{
+                        $('.outerprimeb'+variantproductid+'-'+primebGroup).replaceWith( this.responseText );
+                        $('.outerprimeb'+variantproductid+'-'+primebGroup+' .prime-counter').removeClass("prime-counter");
+                        var countryclass = document.getElementsByClassName('primebCountry');
+                        for (var i = 0; i < countryclass.length; i++) {
+                            var counrtylist = countryclass[i].getAttribute('data-countryselected');
+                            var position = counrtylist.search(primebcountryName);
+                            if(position < 0){ 
+                                countryclass[i].style.cssText = 'display:none !important';
+                            }else{
+                                countryclass[i].style.display= 'block';
+                            }
+                        }
+                        // primebcountryName = '';
+                        setTimeout(function(){ 
+                            primebCountdownTimer();
+                        }, 500); 
+                    }
+                } else {
+                    console.log('failed variant req');
+                }
+            }
+        };
+        xhr.send();
+
+    }
+
+    function primebCountdownTimer() {
+
+       screensizeFunction();
+        
+        setTimeout(function(){ 
+            var primebText = document.getElementsByClassName('primebText');
+            if(primebText[0]){
+                for (var i = 0; i < primebText.length; i++) {
+                    var value = primebText[i].innerHTML;
+                    if( value.indexOf("[[today") != -1  ){
+                        expdeliverydate(value,i);
+                    }
+                }
+            }
+
+            var primebText = document.getElementsByClassName('primebText');
+            if(primebText[0]){
+                for (var i = 0; i < primebText.length; i++) {
+                    var value = primebText[i].innerHTML;
+                    if( value.indexOf("CountdownTimer:") != -1  ){
+                        myTimerprime2(value,i);
+                    }
+                }
+            }
+
+            var getpage = '{{request.page_type}}';
+            var primebText2 = document.getElementsByClassName('primebText primebVariantInventory');
+            if(primebText2[0]){
+                if(getpage == 'collection'){
+                    for (var i = 0; i < primebText2.length; i++) {
+                        var oldloop = primebText2[i].parentElement;
+                        var newloop = oldloop.parentElement;
+                        var newloop2 = newloop.parentElement;
+                        newloop2.remove();
+                    }
+                }
+            }
+
+        }, 1000); 
+
+        setTimeout(function(){ 
+            // window.onload = function() {
+                var primeinstances2 = tippy('[data-tippy-content]');
+            // };
+
+            var primebsku = '{{ProductSKU}}';
+            var skuclass = document.getElementsByClassName('primebsku');
+            if(primebsku == 0){
+                for (var i = 0; i < skuclass.length; i++) {
+                    if(skuclass[i].dataset.sku == 0){
+                        var parentsku = skuclass[i].parentElement;
+                        var parent2sku = parentsku.parentElement;
+                        parent2sku.style.cssText = 'display:none !important';
+                    }
+                }
+            }
+        }, 1000);
+
+        if(country == 'primebadgecountry'){
+            country = 'newprimebadgecountry';
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var mycountryold = this.responseText;
+                    mycountryold = mycountryold.replace("{\n", "");
+                    mycountryold = mycountryold.replace("\n}", "");
+                    var newvar = mycountryold.split(",");
+                  	var setcountry = newvar[0].slice(14);
+                    var mycountry = setcountry.replace('"', "");
+                    var countryclass = document.getElementsByClassName('primebCountry');
+                    for (var i = 0; i < countryclass.length; i++) {
+                        var counrtylist = countryclass[i].getAttribute('data-countryselected');
+                        var position = counrtylist.search(mycountry);
+                        primebcountryName = mycountry;
+                        if(position < 0){ 
+                            countryclass[i].style.cssText = 'display:none !important';
+                        }else{
+                            countryclass[i].style.display= 'block';
+                            countryclass[i].setAttribute('countryrule', '1');
+
+                            if (countryclass[i].classList.contains('primebScreenSize')) {
+                                var screenlist = countryclass[i].getAttribute('data-screensizeselected');
+                                var screensizeArray = screenlist.split(",");
+                                var smdevice = window.matchMedia( "screen and (max-width: 767.98px)" );
+                                var mddevice = window.matchMedia( "screen and (min-width: 768px) and (max-width: 991.98px)" );
+                                var lgdevice = window.matchMedia( "screen and (min-width: 992px) and (max-width: 1199.98px)" );
+                                var xldevice = window.matchMedia( "(min-width: 1200px)" );
+
+                                if (smdevice.matches ){
+                                    if(screensizeArray[0] == '1'){
+                                        // countryclass[i].style.display= 'block';
+                                    }else{
+                                        countryclass[i].style.setProperty("display", "none", "important");
+                                    }
+                                }else if( mddevice.matches){
+                                    if(screensizeArray[1] == '1'){
+                                        // countryclass[i].style.display= 'block';
+                                    }else{
+                                        countryclass[i].style.setProperty("display", "none", "important");
+                                    }
+                                }else if(lgdevice.matches){
+                                    if(screensizeArray[2] == '1'){
+                                        // countryclass[i].style.display= 'block';
+                                    }else{
+                                        countryclass[i].style.setProperty("display", "none", "important");
+                                    }
+                                }else{
+                                    if(screensizeArray[3] == '1'){
+                                        // countryclass[i].style.display= 'block';
+                                    }else{
+                                        countryclass[i].style.setProperty("display", "none", "important");
+                                    }
+                                }
+
+                            }
+                            
+                        }
+                    }
+                }
+            };
+            xhttp.open("GET", "https://geoloc.thapi.workers.dev/", true);
+            xhttp.send();
+            
+        }
+        
+        var mypage = '{{template}}';
+        var myproductid = '{{product.id}}';
+        for (var i = 0; i < 6; i++) {
+            setTimeout(function(){ 
+                primesetlivevisit(mypage,myproductid);
+            }, 500); 
+        }
+
+        
+        
+    }
+
+    function primesetlivevisit(mypage,myproductid) {
+        setTimeout(function(){ 
+            var settimelive = '2';
+            var setvisitlimit = '2';
+            var d = new Date();
+            var time = setcookietimestamp(settimelive);
+            var mytime = '';
+            if(settimelive < 5){
+                mytime = (time * 60 );
+            }else if(settimelive > 4 && settimelive < 8){
+                mytime =(time * 60 * 60 );
+            }else if(settimelive > 7){
+                mytime = (time * 24 * 60 * 60 );
+            }
+
+            var primeloop2 = document.getElementsByClassName('primebloop');
+            for (var i = 0; i < primeloop2.length; i++) {
+                var smallloop2 = primeloop2[i].parentElement;
+                var parentloop2 = smallloop2.getAttribute('data-primeproductid');
+                var myuser = getCookieprime("primevisits"+parentloop2);
+                if (myuser != "") {
+                    myhttpreq(parentloop2,0,mytime,setvisitlimit);
+                } else {
+                    myhttpreq(parentloop2,1,mytime,setvisitlimit);
+                    setCookieprime("primevisits"+parentloop2, 'setprimevisits', settimelive);
+                }
+            }
+
+            var primeloop = document.getElementsByClassName('primebloop');
+            for (var i = 0; i < primeloop.length; i++) {
+                if(mypage == 'product'){
+                    var smallloop = primeloop[i].parentElement;
+                    var parentloop = smallloop.getAttribute('data-primeproductid');
+                    if(parentloop == myproductid){
+                        primeloop[i].classList.add("primevisitsb"+parentloop);
+                    }else{
+                        var removeloop = primeloop[i].parentElement;
+                        var removeloop2 = removeloop.parentElement;
+                        var removeloop3 = removeloop2.parentElement;
+                        removeloop3.style.visibility = 'hidden';
+                        primeloop[i].classList.remove("primebloop");
+                    }
+                }else{
+                  var oldloop = primeloop[i].parentElement;
+                  var newloop = oldloop.parentElement;
+                  var newloop2 = newloop.parentElement;
+                  newloop2.style.visibility = 'hidden';
+                  primeloop[i].classList.remove("primebloop");
+                  newloop2.remove();
+                }
+            }
+
+        }, 1000);
+    }
+
+    function myhttpreq(lastid,mynew,gettime,setvisitlimit) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var pageliveview = JSON.parse(this.responseText);
+                var primevisits = document.getElementsByClassName("primevisitsb"+lastid);
+                for (var i = 0; i < primevisits.length; i++) {
+                    if(setvisitlimit < pageliveview.pageviews){
+                        primevisits[i].innerHTML = pageliveview.pageviews;
+                        var removeloop = primevisits[i].parentElement;
+                        var removeloop2 = removeloop.parentElement;
+                        var removeloop3 = removeloop2.parentElement;
+                        removeloop3.style.visibility = 'visible';
+                    }else{
+                        var removeloop = primevisits[i].parentElement;
+                        var removeloop2 = removeloop.parentElement;
+                        var removeloop3 = removeloop2.parentElement;
+                        removeloop3.style.visibility = 'hidden';
+                        primevisits[i].classList.remove("primebloop");
+                    }
+                        
+                }
+            }
+        };
+        xhttp.open("GET","https://visitcounterstaging.thalia-apps.com/?shopifyid="+lastid+"&new="+mynew+"&time="+gettime, true);
+        xhttp.send();
+    }
+
+    function mymodalprimeb() {
+      var target = document.getElementById("prime-modal-window");
+      var parenttarget = target.parentElement;
+      if (parenttarget.classList.contains('prime-modal-open')) {
+        parenttarget.classList.remove('prime-modal-open');
+        document.getElementById('prime-modal-content').innerHTML = '';
+      }
+    }
+
+    window.addEventListener('resize', resizeFunction);
+
+    window.addEventListener('resize', screensizeFunction);
+
+    function resizeFunction() { 
+        var fontadjust = document.getElementsByClassName('prime-font-adjust');
+        var heightadjust = document.getElementsByClassName('prime-height-adjust');
+        var xsdevice = window.matchMedia( "(max-width: 575.98px)" );
+        var smdevice = window.matchMedia( "(max-width: 767.98px)" );
+        var mddevice = window.matchMedia( "(max-width: 991.98px)" );
+        var lgdevice = window.matchMedia( "(max-width: 1199.98px)" );
+        var xldevice = window.matchMedia( "(min-width: 1200px)" );
+        for (var i = 0; i < fontadjust.length; i++) {
+            var mobilesize = '';
+            var tabletsize = '';
+            mobilesize = fontadjust[i].getAttribute('data-mobilesize');
+            tabletsize = fontadjust[i].getAttribute('data-tabletsize');
+            fontadjust[i].style.fontSize = 'inherit';
+            if (xsdevice.matches || smdevice.matches ){
+                if(mobilesize > 0){
+                    fontadjust[i].style.fontSize = mobilesize+'px';
+                }
+            }else if(mddevice.matches){
+                if(tabletsize > 0){
+                    fontadjust[i].style.fontSize = tabletsize+'px';
+                }
+            }
+        }
+        var heightadjust = document.getElementsByClassName('prime-height-adjust');
+        for (var i = 0; i < heightadjust.length; i++) {
+            var image = heightadjust[i].getElementsByClassName("primebImage");
+            var mobileheight = '';
+            var tabletheight = '';
+            var defaultHeight = heightadjust[i].getAttribute('data-defaultheight');
+            mobileheight = heightadjust[i].getAttribute('data-mobileheight');
+            tabletheight = heightadjust[i].getAttribute('data-tabletheight');
+            var imgsrcsvg = image[0].getAttribute("src");
+            var present = imgsrcsvg.search("svg");
+            if(present > 0){
+                image[0].style.height = defaultHeight+'px';
+                image[0].style.maxHeight = defaultHeight+'px';
+                if (xsdevice.matches || smdevice.matches ){
+                    if(mobileheight > 0){
+                        image[0].style.height = mobileheight+'px';
+                        image[0].style.maxHeight = mobileheight+'px';
+                    }
+                }else if(mddevice.matches){
+                    if(tabletheight > 0){
+                        image[0].style.height = tabletheight+'px';
+                        image[0].style.maxHeight = tabletheight+'px';
+                    }
+                }
+            }else{
+                image[0].style.maxHeight = defaultHeight+'px';
+                if (xsdevice.matches || smdevice.matches ){
+                    if(mobileheight > 0){
+                        image[0].style.maxHeight = mobileheight+'px';
+                    }
+                }else if(mddevice.matches){
+                    if(tabletheight > 0){
+                        image[0].style.maxHeight = tabletheight+'px';
+                        
+                    }
+                }
+            }
+            
+        }
+
+    }
+
+    function screensizeFunction() { 
+        var screensizeclass = document.getElementsByClassName('primebScreenSize');
+        for (var i = 0; i < screensizeclass.length; i++) {
+
+            var issetcountryrule = screensizeclass[i].getAttribute('countryrule');
+
+            if( issetcountryrule == '1'){
+            
+                var screenlist = screensizeclass[i].getAttribute('data-screensizeselected');
+                var screensizeArray = screenlist.split(",");
+                
+                var smdevice = window.matchMedia( "screen and (max-width: 767.98px)" );
+                var mddevice = window.matchMedia( "screen and (min-width: 768px) and (max-width: 991.98px)" );
+                var lgdevice = window.matchMedia( "screen and (min-width: 992px) and (max-width: 1199.98px)" );
+                var xldevice = window.matchMedia( "(min-width: 1200px)" );
+
+                if (smdevice.matches ){
+                    if(screensizeArray[0] == '1'){
+                        screensizeclass[i].style.display= 'block';
+                    }else{
+                        screensizeclass[i].style.setProperty("display", "none", "important");
+                    }
+                }else if( mddevice.matches){
+                    if(screensizeArray[1] == '1'){
+                        screensizeclass[i].style.display= 'block';
+                    }else{
+                        screensizeclass[i].style.setProperty("display", "none", "important");
+                    }
+                }else if(lgdevice.matches){
+                    if(screensizeArray[2] == '1'){
+                        screensizeclass[i].style.display= 'block';
+                    }else{
+                        screensizeclass[i].style.setProperty("display", "none", "important");
+                    }
+                }else{
+                    if(screensizeArray[3] == '1'){
+                        screensizeclass[i].style.display= 'block';
+                    }else{
+                        screensizeclass[i].style.setProperty("display", "none", "important");
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    function redirectLinkbadge(badgeval,links,primebadgeid,modalsize) {
+        if(badgeval != ''){
+            var badgelink = badgeval;
+            if(links == 0){
+                window.location.href = badgelink;
+            }else{
+                window.open(badgelink,'_blank');
+            }
+        }
+        if(links == 2){
+            var target = document.getElementById("prime-modal-outer");
+            var myclasses = '';
+            if(modalsize == 0){
+                myclasses = 'prime-modal-window prime-modal-small';
+            }else if(modalsize == 2){
+                myclasses = 'prime-modal-window prime-modal-large';
+            }else{
+                myclasses = 'prime-modal-window';
+            }
+            document.getElementById('prime-modal-outer').classList.add('prime-modal-open');
+            var setclass = document.getElementById('prime-modal-window');
+            setclass.className = '';
+            setclass.className = myclasses;
+            var xhr = new XMLHttpRequest();
+            var url = '/?view=primemeta&id==badge-popup-'+primebadgeid;
+            xhr.open("GET", url, true);
+            xhr.setRequestHeader("Cache-Control", "max-age=3600");
+            xhr.onreadystatechange = function() {
+                if (this.readyState === XMLHttpRequest.DONE) {
+                    if (this.status === 200) {
+                        document.getElementById('prime-modal-content').innerHTML = this.responseText;
+                    } else {
+                        console.log(this.status, this.statusText);
+                    }
+                }
+            };
+            xhr.send();
+        }
+    }
+
+    function toValidDateprime2(datestring){
+        return datestring.replace(/(\d{2})(\/)(\d{2})/, "$3$2$1");   
+    }
+
+    function myTimerprime2(newvalue,count) {
+        var primebText2 = document.getElementsByClassName('primebText');
+
+        var againvalue = newvalue;
+        var pos3 = newvalue.indexOf("[[ CountdownTimer:");
+        var pos4 = newvalue.indexOf("M,");
+        if(pos4 < 0){
+            pos4 = newvalue.indexOf(" ]]");
+            var res = newvalue.slice(pos3+18, pos4);
+        }else{
+            var res = newvalue.slice(pos3+18, pos4+1);
+        }
+        var pos5 = newvalue.indexOf(" ]]");
+        var endres = againvalue.slice(pos3+18, pos5);
+        newvalue = newvalue.replace("[[ CountdownTimer:", "" );
+        newvalue = newvalue.replace(" ]]", "" );
+        var getlang = endres.split(",");
+        var setlang2 = 'en';
+        if(getlang.length > 1){
+            if(getlang[1] == 'custom'){
+                if (getlang[2] == null){
+                    var setdays = '';
+                }else{
+                    var setdays = getlang[2];
+                }
+                if (getlang[3] == null){
+                    var sethours = '';
+                }else{
+                    var sethours = getlang[3];
+                }
+                if (getlang[4] == null){
+                    var setminutes = '';
+                }else{
+                    var setminutes = getlang[4];
+                }
+                if (getlang[5] == null){
+                    var setseconds = '';
+                }else{
+                    var setseconds = getlang[5];
+                }
+            }else{
+            setlang2 = getlang[1];
+            var setmoment = moment();
+            setmoment.locale(setlang2);
+            setmoment.subtract({hours: 0, minutes: 0, seconds: 35});
+            var getseconds = setmoment.toNow(true);
+            setmoment.subtract({hours: 0, minutes: 10, seconds: 59});
+            var getminutes = setmoment.toNow(true);
+            setmoment.subtract({hours: 5, minutes: 59, seconds: 59});
+            var gethours = setmoment.toNow(true);
+            setmoment.subtract({hours: 222, minutes: 59, seconds: 59});
+            var getdays = setmoment.toNow(true);
+            var setseconds = getseconds.split(" ").pop();
+            var setminutes = getminutes.split(" ").pop();
+            var sethours = gethours.split(" ").pop();
+            var setdays = getdays.split(" ").pop();
+            }
+        }else{
+            var setdays = "days";
+            var sethours = "hours";
+            var setminutes = "minutes";
+            var setseconds = "seconds";
+        }
+
+        var x = setInterval(function() { 
+            let end = new Date(toValidDateprime2(res));
+            let start = new Date();
+            var remaintime = end - start;
+            var days = Math.floor(remaintime / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((remaintime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((remaintime % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((remaintime % (1000 * 60)) / 1000);
+            var realtimeleft = days +" "+ setdays +" "+ hours +" " + sethours +" "+ minutes +" "+ setminutes +" "+ seconds +" " + setseconds + " ";
+            if(seconds < 0){
+                realtimeleft = "0 "+setdays+" 0 "+sethours+" 0 "+setminutes+" 0 "+setseconds;
+            }
+            primebText2[count].innerHTML = newvalue.replace(endres,realtimeleft);
+            primebText2[count].classList.remove("prime-counter");
+            if (remaintime < 0) { 
+                clearInterval(x); 
+            } 
+        }, 1000);
+
+        // var pos = newvalue.indexOf("CountdownTimer:");
+        // var res = newvalue.slice(pos+15, pos+34);
+        // newvalue = newvalue.replace("[[ CountdownTimer:", "" );
+        // newvalue = newvalue.replace("]]", "" );
+        //     let end = new Date(toValidDateprime2(res));
+        //     let start = new Date();
+        //     var remaintime = end - start;
+        //     var days = Math.floor(remaintime / (1000 * 60 * 60 * 24));
+        //     var hours = Math.floor((remaintime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        //     var minutes = Math.floor((remaintime % (1000 * 60 * 60)) / (1000 * 60));
+        //     var seconds = Math.floor((remaintime % (1000 * 60)) / 1000);
+        //     var realtimeleft = days + "d "+hours + "h "+minutes + "m "+seconds + "s";
+        //     if(seconds < 0){
+        //         realtimeleft = "0d 0h 0m 0s";
+        //     }
+             
+    }
+
+    function setCookieprime(cname, cvalue, exdays) {
+      var d = new Date();
+      var time = setcookietimestamp(exdays);
+      if(exdays < 5){
+        d.setTime(d.getTime() + (time * 60 * 1000));
+      }else if(exdays > 4 && exdays < 8){
+        d.setTime(d.getTime() + (time * 60 * 60 * 1000));
+      }else if(exdays > 7){
+        d.setTime(d.getTime() + (time * 24 * 60 * 60 * 1000));
+      }
+      
+      var expires = "expires="+d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookieprime(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function setcookietimestamp(time) {
+        var realtime='';
+        if(time==1){
+            realtime=1;
+        }else if(time==2){
+            realtime=5;
+        }else if(time==3){
+            realtime=10;
+        }else if(time==4){
+            realtime=30;
+        }else if(time==5){
+            realtime=1;
+        }else if(time==6){
+            realtime=6;
+        }else if(time==7){
+            realtime=12;
+        }else if(time==8){
+            realtime=1;
+        }else if(time==9){
+            realtime=7;
+        }else if(time==10){
+            realtime=15;
+        }else if(time==11){
+            realtime=30;
+        }
+        return realtime;
+    }
+
+</script> 

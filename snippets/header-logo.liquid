@@ -1,0 +1,35 @@
+{%- capture class -%}
+  sf-logo px-4 {{ box_size }} {{ justify | default: 'justify-center' }} {% if header_settings.logo %}has-logo-img{% endif %}
+{%- endcapture -%}
+{% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
+
+{% if request.page_type == 'index' and is_in_search != true %}
+<h1 class="{{ class | strip_newlines }}">
+{% else %}
+<div class="{{ class | strip_newlines }}">
+{% endif %}
+  {% if header_settings.logo != blank %}
+      <a href="{{ routes.root_url }}" class="block py-2.5 logo-img relative">
+          {% comment %}
+          {% if header_settings.logo_light != blank %}
+              {% render 'responsive-image', image_class: 'inline-block', image: header_settings.logo_light, wrapper_class: 'sf-logo-light' %}
+          {% endif %}
+          {% endcomment %}
+          {% if header_settings.logo_transparent != blank %}
+              {% assign logo_transparent = header_settings.logo_transparent %}
+          {% else %}
+              {% assign logo_transparent = header_settings.logo %}
+          {% endif %}
+          {% render 'responsive-image', image_class: 'inline-block', image: header_settings.logo, wrapper_class: 'sf-logo-default', alt: logo_alt %}
+          {% render 'responsive-image', image_class: 'inline-block', image: logo_transparent, wrapper_class: 'sf-logo-transparent', alt: logo_alt %}
+      </a>
+  {% else %}
+      <a href="{{ routes.root_url }}" class="block text-center">
+          <strong>{{ header_settings.logo_text }}</strong>
+      </a>
+  {% endif %}
+{% if request.page_type == 'index' and is_in_search != true %}
+</h1>
+{% else %}
+</div>
+{% endif %}

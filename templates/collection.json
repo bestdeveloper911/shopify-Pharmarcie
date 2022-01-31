@@ -1,0 +1,161 @@
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-page-header",
+      "settings": {
+        "layout": "without_breadcrumb",
+        "header_height": "small",
+        "text_alignment": "left",
+        "vertical_alignment": "center",
+        "bg_color": "#f8f8f8",
+        "enable_parallax": false,
+        "upper_title": false,
+        "enable_collection_image": true,
+        "show_desc": true,
+        "collection_all_desc": ""
+      }
+    },
+    "main": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "80e063bf-206b-4f7a-aa65-3eed3e53fd02": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "default",
+            "title": "Category",
+            "filtergroup": "Sexuality & Intimate Care, Skin Care, Body Care, Bath & Shower, Discovery Cases, Makeup, Hands & Feet Care, Room Fragrances, Anti-Lice Products Products> Environment, Anti-Lice Products, Eyes & Optics, First Aid, Nose & Throat & Ears, Medical Accessories, Muscle & Joints Pain, Home & Environment, Orthopaedics, Travel, Various Pain, Sexuality & Intimate Care, Deodorants & Anti-Perspirants, Dental Care, Face Care, Sports Accessories",
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        },
+        "33628a8c-22ac-45b0-8cc5-807218b5305f": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "design_filtergroup": "default",
+            "title": "Subcategory",
+            "filtergroup": "",
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        },
+        "4903963a-90f0-4fe1-be23-ee4f8749e483": {
+          "type": "filter",
+          "settings": {
+            "design_filtergroup": "default",
+            "title": "Brands",
+            "filtergroup": "Avène,Bioderma,Biotherm,Darphin,La Roche-Posay,Vichy,4711,3 Claveles,3C Pharma,3M,A.Vogel,Abatout,Aboca,Acar Ecran,Act'éco,Actinica,Acuvue,A-DERMA,Adiaril,Advantage,Advantix,AF International,Airplus,Akileïne,Algotherm,Allga San,Alliance,Alodont,Alphanova,Alpine Hearing Protection,Alvadiem,Alvityl,Always,Amilab,Anaca3,ANNAYAKE,AnnurKap,Antisnor,Apaisac Biorga,Apaisyl,AphtAvéa,Apoticare,Aquasilice,Aquatabs,AquaTéal,Argiletz,Arkopharma,Arlor Natural Scientific,Armonia,Arnican,Aromaya Cosmétique,Arterin,Arthrodont,Aspiréa,Aspivenin,Assanis,Assy 2000,Atrix,Audispray,Audistimpharma,Aunéa,Auriga,Authentine,Avent,Babybio,Babynat,Baccide,Bailleul-Biorga,Balade en Provence,Ballot-Flurin,Bauerfeind,Bausch + Lomb,Bayer Consumer Care,BcomBIO,Béaba,Beaphar,BébéBiafine,Bébisol,Benecos,Bepanthen,Berocca,Better Toothbrush,Big Teaze Toys,Bio4you,Biocanina,Biociel,Biocyte,Bio-ethic,Biofar,Biofloral,Biofreeze,BioGaia,Biogaran,Bi-Oil,Biolane,Bion 3,BIOpreventis,Biopur,Bioregena,Biorène,Biorepul s',Biosana,Biosecure,Biosilk,Biosme,Biostime,Biostop,Biosynex,Biotechnie,Biotherm Homme,Bioveillance,Biovive,Bioxydiet,Blédina,Blox,Boarding Ring,Boehringer Ingelheim,Boho Green Make-up,Boiron,Botot,Braun,BT Cosmetics,Bubimex,Buccotherm,Bum diapers,Buvard d'encens,Cadaques,Cairn,Calmorrhoïde,Calmosine,Calysia,Camon,Canderel,Canys,Capricare,Carmex,Cartel Paris,Cattier,Caudalie,CB12,CBD,Cedralex,Celliflore,Centrum,CeraVe,Cerecare,C'est Moi Qui l'Ai Fait,ChapStick,Château Rouge,CHI,Chicco,CicaBiafine,Cinq sur Cinq,CitroPlus,Citrosil,Claude Galien,Clearblue,Clément Thékan,Clinique,Clinomyn,Coalgan,Codexial,Colgate,Collagen Lift,Collagena,Collosol,Colpropur,Comodynes,Compeed,Comptoir des Huiles,Cooper,Cottony,Coup d'Éclat,Covermark,Crazy Rumors,Crinex,Cryopharma,CurcumaxxC+,Cysticare,Dacryo,D'Âme Nature,Daylong,dBb Remond,Decléor,Décramp,Dekelaction,Delarom,Demak'Up,Densmore,Dentaid,Denti Smile,Denticlay,Dermagor,Dermalex,Dermatherm,Dermophil Indien,Dermorens,Désinfectis,Dettol,Dexsil,Diafarm,Diet World,Difrax,Docteur Valnet,Dodie,Dr Niedermaier,Dr. Theiss,Ducray,Dukan,Dulàc,DUO LP-PRO,Duolac,Durex,EA Pharma,Eafit,Eau de Jonzac,Eau de Mélisse,Eau Précieuse,Ecrinal,Éditions Filipacchi,Effadiane,EffiDerm,Effik,Elancyl,Elastogum,Elastoplast,Elcéa,Elgydium,Eliott et Loup,Elixirs & Co,Elmex,Embryolisse,Emoform,Emtrix,Eostra,Erborian,Eric Favre,Escos,Esprit Bio,Essity,Estipharm,Etat Pur,Etiaxil,Eucerin,Eutra,Evian,Excilor,Exopharm,Eye Care,Eyes,Femannose,Femibion,Filarmonica,Filorga,Finger Bob,Fittydent,Fixodent,Flamant Vert,Flamingo,Fleurs de Bach Original,Florêve,Fluocaril,Foamie,Forté Pharma,Foucaud,FRANPROTEC,Frescoryl,Frontline,Galderma,Galénic,Gallia,Gamarde,Garancia,Genacol,Gerimax,Gibaud,Gifrer,Gilbert,Gillette,Ginkor,Glamy,Good Goût,Granions,Green Tribu,Greenleaf,Guigoz,GUM,H.D.N.C,Haan,Halter,Haribo,Hartmann,HE.CO STOP,Healse,Hei Poa,HerbalGem,Herbatint,Herbesan,Hermès Edulcorants,Hexamer,Hip,HiPP,Hirucrem,HRA Pharma,Humer,Huyder Pharma,Hyalugel,Hydralin,Hydratis,Hydrolarm,Hyfac,ialugen Advance,Imedeen,Imiza,Inava,Incarose,Ineldea,Innovatouch,Innoxa,Insect Ecran,Institut Esthederm,Intima,Intimy,Invisibobble,Ipsen,Isdin,Isoxan,Item Dermatologie,Ixage,Jacadi,Jaïlys,Jaldes,Jolen,Jordan,Jouvence,Jowaé,Juvaflorine,Juvamine,Kaé,Kal,Kamol,Khalice,Kijimea,King,Klorane,Kneipp,La Chênaie,La Corvette,Labello,Labophyto,Laboratoire ACM,Laboratoire Carrare,Laboratoire CCD,Laboratoire de la Mer,Laboratoire du Gomenol,Laboratoire du Haut-Ségala,Laboratoire Immubio,Laboratoire Leurquin Mediolanum,Laboratoire MVS,Laboratoire Novomedis,Laboratoire Phyto-Actif,Laboratoire Source Origine,Laboratoire X.O,Laboratoires Bouchara-Recordati,Laboratoires de Biarritz,Laboratoires Élerté,Laboratoires Fumouze,Laboratoires Genevrier,Laboratoires IPRAD,Laboratoires ITC,Laboratoires Jolly Jatel,Laboratoires Quinton,Lactacyd,L'Action Paris,Ladrôme,Lady Green,Ladygiène,Laino,Lamazuna,Langloys,Lashilé Beauty,Lazartigue,LBS Médical,Le Comptoir Aroma,Le Comptoir des Tendances,Le Comptoir du Bain,Le Négri,Le Petit Marseillais,Leaf Care,Léro,Les 3 Chênes,Les Déglingos,Les Préparations de l'Apothicaire,Les Secrets de Louise,Les Tendances d'Emma,L'Essence des Notes,Libellys,Liberty Cup,Licetec V-Comb,Lierac,Lily of the Desert,Listerine,LLR-G5,Lothantique,Lotus,Love & Green,LRN,Luc et Léa,Lunacopine,Lutsine,Luxéol,Lypsyl,Lytess,M2 BEAUTÉ,Macadamia,Machouyou,Mademoiselle Provence,Mag 2,Magnien,Maison Berthe Guilhem,MAM,Manetik,Manix,Manouka,Marcus Rohrer,Marie Rose,Marilou Bio,Mavala,Mayoly Spindler,Medela,Medicafarm,Médiflor,Médi-Santé,Meditopmask,Melvita,Merck,Mercryl,Mercurochrome,Meridol,Micropur,Milical,Milton,Mimitika,Mint-e,Mitosyl,MKL Green Nature,Modilac,Möller's,Montbralgic,Montbrun,Mousticare,Moustidose,Moustifluid,Mucogyne,Mustela,MyLab,Mylan,Myleuca,Nailner,Nasanita,Nat&Nove Bio,Natessance,Natorigin,Natura Siberica,Naturactive,Nature & Senteurs,Nature Attitude,Natures Plus,NatureSun Aroms,NatureSun Aroms,Naturland,NeoStrata,Nestlé,Netline,Nett,Neutraderm,Neutrogena,New Nordic,Nildor,Nobacter,Nomank,Noreva,Novalac,Novax Pharma,Noviderm,Novodex,Nuizz,NUK,Nunki,Nutergia,Nutreov,Nutri Expert,Nutrigea,Nutrisanté,Nutrivie,Nuxe,o.b.,Obsessive,Oemine,Oenobiol,Oh qu'il est bio,Oligocean,Olioseptil,OM3,Omega Pharma,Omron,Onagrine,Onisis,Opalescence,OptiFibre,Optone,Oral-B,Orgakiddy,Organyc,Orlane,Oropur,Ortis,Osato,Oscience,Osma Laboratoires,Otosan,Overstims,Pampers,PaperMints,Papier d'Arménie,Parakito,Paranix,Parasidose,Parodontax,Parogencyl,Pasta del Capitano,Pastille Vichy,Payot,PediAct,Pediakid,Pedimed,Pédirelax,Perfect Care BV,Pétrole Hahn,Pharmatoka,Pharmavoyage,PharmUp,Philips,Physiogel,Physiolac,Physiomer,Phytalessence,Phytaromasol,Phytema,Phyto,Phytoceutic,Phytoresearch,Phytosun Arôms,Phyt's,Pierre Fabre Health Care,Pierre Fabre Oral Care,Pilbox,Pileje,Pimélia,Piz Buin,Placentor Végétal,Plaisir Secret,Planter's,Plic,pM,Poderm,Pohl Boskamp,Polident Corega,Poméol,Pouxit,Powerscan,Pranarôm,Pretty Love,Preven's,Prim'Soins,ProRhinel,Prostamol,Pukka,Pulmoll,Punch Power,Pur Aloé,Pure Via,Puressentiel,Qiriness,Quies,Rap,Rapid White,Real Health,Recettes d'Antan,Redon,Reedley Professional,Regenerate,René Furterer,Rescue,Respectueuse,Resultime,Revamil,Rhinicur,Rhino Horn,Richelet,Ricqlès,Rivadouce,RoC,Rogé Cavaillès,Roger & Gallet,Rolling Hills,Rougj,S.I.D Nutrition,Sabounia,Saforelle,Sagyène,Saint-Bernard,Saint-Gervais Mont Blanc,Saltrates,Salvequick,Sanodiane,Sanofi,Sanoflore,Sanogyl,Santarome,Santé Verte,Saugella,Schmidt's,Scholl,Sea Band,Sebamed,Secret Intime,Secrets des Fées,Sédermyl,SensiBiafine,Sensodyne,Sérélys,Seresto,Servier,Si+,Sigvaris,Silagic,Silence,Sinomarin,SkinCeuticals,Skincode,Slendertone,Smile Carbon,Snails,Snowfire,Sodia,Soframar,Solaray,Soleil Noir,SoleilBiafine,Solens,Solgar,SOLUGYN,Somatoline Cosmetic,Sophie la Girafe,STC Nutrition,Steradent,Stérimar,Stiefel,Stimcare,Stopiq,Suavinex,Sucrettes,Sugarbearhair,Suncoatgirl,Super Diet,Superwhite,Supradyn,SVR,Synergia,Synphonat,SyntholKiné,T.Leclerc,Taaj,Taboo,Tadé,Taïdo,Talika,Tampax,Tangle Teezer,TargEDys,Théa,Therabel,Theramex,TheraPearl,ThermaCare,Thuasne,Tiger Balm,Tilman,Tommee Tippee,Tonipharm,Toofruit,Top Sea Buccal,Topicrem,Toppik,Torm,Tranquilléo,Ultrasound Tech,Unyque,Urgo,Uriage,Valda,Valdispert,Valdispharm,Vamousse,Vania,Veet,Veld's,Venimex,Veracova,Vétobiol,Vetoform,VIBTIL,Vicks,Virgite,Visio Pure,Visiomed,VISUfarma,Vita Citral,VitAbsolu,Vitaflor,Vital Proteins,Vitalens,Vitascorbol,Vitavea,Vitry,VoltActive,Vyséo,Waterwipes,WC Pocket,Weleda,XLS,Ymea,Yogi Tea,Zambon,Zeiss,Zelesse,Zendium,ZzzQuil",
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        },
+        "00b3badd-1613-4230-85d8-f87f04306aaa": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "design_filtergroup": "inrow",
+            "title": "Product Type",
+            "filtergroup": "Beauty,Anti-Age\/Antioxidant,Hair\/Nail,Health,Digestion,Multi-Vitamins,Tone \/ Form,Stress,Skin,Allergies,Manicure Accessories,Nail Clipper,Bases and Top Coats,Nail Files & Polishers",
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        },
+        "4d4e8567-ab8a-4772-9196-84346e4ff965": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "design_filtergroup": "default",
+            "title": "Tags",
+            "filtergroup": "Vintage,tops,shirts,Aromatherapy",
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        },
+        "26ef6509-772d-4c44-bd90-efc089bd9355": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "design_filtergroup": "button",
+            "title": "Size",
+            "filtergroup": "XS,S,M,L,XL",
+            "use_accordion": false,
+            "open_filtergroup": true
+          }
+        },
+        "e12de6da-eab8-4abe-967c-06d0d959a18a": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "design_filtergroup": "color",
+            "title": "Colors",
+            "filtergroup": "Blue, Red, White ,Black ,Pink ,Silver,Purple,Brown,Yellow,Grey,Green,Tan,Violet,Dark Grey,Beige,Light Blue, Dark Blue, Light Grey, Light Pink, Mint, Rose Gold, Night Blue, Copper, Coral, Rosy Brown",
+            "use_accordion": false,
+            "open_filtergroup": true
+          }
+        },
+        "fa31a837-9c99-4c92-8cfe-0527ffbe7b15": {
+          "type": "filter",
+          "disabled": true,
+          "settings": {
+            "design_filtergroup": "default",
+            "title": "Prices",
+            "filtergroup": "$0-$50,$50-$100,$100-$150,$150-$200,$200-$300,$300-$400",
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        },
+        "456dfb43-be8f-4d40-914c-4956fa22d51b": {
+          "type": "collections",
+          "disabled": true,
+          "settings": {
+            "title": "Collections",
+            "menu": "",
+            "use_accordion": true,
+            "open_filtergroup": true
+          }
+        }
+      },
+      "block_order": [
+        "80e063bf-206b-4f7a-aa65-3eed3e53fd02",
+        "33628a8c-22ac-45b0-8cc5-807218b5305f",
+        "4903963a-90f0-4fe1-be23-ee4f8749e483",
+        "00b3badd-1613-4230-85d8-f87f04306aaa",
+        "4d4e8567-ab8a-4772-9196-84346e4ff965",
+        "26ef6509-772d-4c44-bd90-efc089bd9355",
+        "e12de6da-eab8-4abe-967c-06d0d959a18a",
+        "fa31a837-9c99-4c92-8cfe-0527ffbe7b15",
+        "456dfb43-be8f-4d40-914c-4956fa22d51b"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "grid_layout": "grid",
+        "grid_columns": "4",
+        "pagination_limit": 20,
+        "show_columns_switcher": true,
+        "show_sorting": true,
+        "show_filter": true,
+        "filters_type": "tags_filter",
+        "sidebar": "leftColumn",
+        "sidebar_title": "Filters",
+        "limit_height_widget": true,
+        "paginate_type": "paginate"
+      }
+    },
+    "recent-viewed": {
+      "type": "recent-viewed-products",
+      "disabled": true,
+      "settings": {
+        "heading": "Recently Viewed Products",
+        "container": "container",
+        "columns": 6,
+        "column_gap": 20,
+        "enable_slider": true
+      }
+    }
+  },
+  "order": [
+    "collection-header",
+    "main",
+    "recent-viewed"
+  ]
+}

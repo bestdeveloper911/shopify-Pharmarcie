@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "main": {
+      "type": "collection-list-template",
+      "blocks": {
+        "06786fde-900d-4048-b2a7-2f1af4b4963e": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "sweaters"
+          }
+        },
+        "c3c7dd10-c393-458e-a903-3de238b2e424": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "leather-boots"
+          }
+        },
+        "b43bcd47-6305-4507-86b2-397dcbb3cdfc": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "denim-pants"
+          }
+        },
+        "17b453d1-b173-4aed-8571-7dc75d2ec6ca": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "sunglasses"
+          }
+        },
+        "3aedbb94-935a-4d80-865f-7c7fbbbddb39": {
+          "type": "collection_item",
+          "settings": {
+            "collection": "leather-bag"
+          }
+        }
+      },
+      "block_order": [
+        "06786fde-900d-4048-b2a7-2f1af4b4963e",
+        "c3c7dd10-c393-458e-a903-3de238b2e424",
+        "b43bcd47-6305-4507-86b2-397dcbb3cdfc",
+        "17b453d1-b173-4aed-8571-7dc75d2ec6ca",
+        "3aedbb94-935a-4d80-865f-7c7fbbbddb39"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "display_type": "all",
+        "title": "Shop by Brand",
+        "description": "",
+        "exclude_collection": "<p>Deals of the Day<\/p><p>Special Offers<\/p><p>Shipping from France<\/p><p>Shipping from USA<\/p><p>Shipping from United States<\/p><p>Vitamins & Natural Remedies<\/p><p>Sun<\/p><p>Men<\/p><p>Health & Personal Care<\/p><p>Hair & Nails<\/p><p>Diet<\/p><p>Baby & Mom<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

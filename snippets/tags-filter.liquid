@@ -1,0 +1,41 @@
+{%- assign position = section.settings.sidebar -%}
+
+<div class="sf__sidebar" data-type="{{ position }}">
+  <div class="sf__sidebar-content">
+      {% if section.settings.sidebar_title != blank %}
+        <h3 class="text-3xl p-5 font-medium {% if position != 'fixed' %}xl:px-0 xl:mb-8 xl:py-0{% endif %}">{{ section.settings.sidebar_title }}</h3>
+      {% endif %}
+      <div class="sf__sidebar-close cursor-pointer absolute top-5 right-5">
+        {% render 'icon', name: 'x', size: 'large' %}
+      </div>
+      <div class="sf__sidebar-wrapper">
+        <div class="sf__filter-wrapper" data-tags-filter data-id={{ section.id }}>
+          <div class="sf__accordion-item mb-8 open">
+            <h6 class="sf__accordion-button mb-4 pr-4">{{ section.settings.tags_filter_title }}</h6>
+
+            {%- if section.settings.tag_design == 'link' -%}
+              {%- assign design_class = 'sf__list-inline' -%}
+            {%- else -%}
+              {%- assign design_class = 'sf__options-swatch sf__button options-middle' -%}
+            {%- endif -%}
+            {%- assign tags_to_show = section.settings.tags_list | replace: ", ", "," | downcase | split: ',' -%}
+
+            <div class="sf__accordion-content max-h-full" style="opacity: 1;">
+              <ul class="{{ design_class }}">
+                {% for tag in collection.all_tags %}
+                  {% if tags_to_show == blank or tags_to_show contains tag %}
+                    {% if current_tags contains tag %}
+                      <li class="capitalize active" data-tag>{{ tag | link_to_remove_tag: tag }}</li>
+                    {% else %}
+                      <li class="capitalize" data-tag>{{ tag | link_to_add_tag: tag }}</li>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+

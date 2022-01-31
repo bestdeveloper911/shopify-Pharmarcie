@@ -1,0 +1,11 @@
+{%- unless collection.filters == empty -%}
+  <div>
+    <p id="CollectionProductCountDesktop" class="collection-product-count light" role="status">
+      {%- if collection.products_count == collection.all_products_count -%}
+        {{collection.products_count}} product(s)
+      {%- else -%}
+        {{ 'sections.collection_template.product_count' | t: product_count: collection.products_count, count: collection.all_products_count }}
+      {%- endif -%}
+    </p>
+  </div>
+{%- endunless -%}

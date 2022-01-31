@@ -1,0 +1,514 @@
+{{ "//cdn.shopify.com/s/javascripts/currencies.js" | script_tag }}
+{% assign sf_amount = "{{amount}}" %}
+{% assign sf_amount_no_decimals = "{{sf_amount_no_decimals}}" %}
+{% assign sf_amount_with_comma_separator = "{{amount_with_comma_separator}}" %}
+{% assign sf_amount_no_decimals_with_comma_separator  = "{{amount_no_decimals_with_comma_separator}}" %}
+
+<script>
+    window.Currency = window.Currency || {}
+    window.Currency.switchers = document.querySelectorAll('.sf-currency-switcher select')
+    window.Currency.key = 'sf-currency'
+    window.Currency.currency = null
+    window.Currency.currencies = null
+    window.Currency.shop = {
+        currencyCode: "{{ cart.currency.iso_code }}",
+        money_with_currency_format: {{ shop.money_with_currency_format | strip_html | json }},
+        money_format: {{ shop.money_format | strip_html | json }},
+    }
+    window.Currency.formats = {
+            USD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} USD",
+            },
+            EUR: {
+                money_format: "&euro;{{sf_amount}}",
+                money_with_currency_format: "&euro;{{sf_amount}} EUR",
+            },
+            GBP: {
+                money_format: "&pound;{{sf_amount}}",
+                money_with_currency_format: "&pound;{{sf_amount}} GBP",
+            },
+            CAD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} CAD",
+            },
+            ALL: {
+                money_format: "Lek {{sf_amount}}",
+                money_with_currency_format: "Lek {{sf_amount}} ALL",
+            },
+            DZD: {
+                money_format: "DA {{sf_amount}}",
+                money_with_currency_format: "DA {{sf_amount}} DZD",
+            },
+            AOA: {
+                money_format: "Kz{{sf_amount}}",
+                money_with_currency_format: "Kz{{sf_amount}} AOA",
+            },
+            ARS: {
+                money_format: "${{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "${{sf_amount_with_comma_separator}} ARS",
+            },
+            AMD: {
+                money_format: "{{sf_amount}} AMD",
+                money_with_currency_format: "{{sf_amount}} AMD",
+            },
+            AWG: {
+                money_format: "Afl{{sf_amount}}",
+                money_with_currency_format: "Afl{{sf_amount}} AWG",
+            },
+            AUD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} AUD",
+            },
+            BBD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} Bds",
+            },
+            AZN: {
+                money_format: "m.{{sf_amount}}",
+                money_with_currency_format: "m.{{sf_amount}} AZN",
+            },
+            BDT: {
+                money_format: "Tk {{sf_amount}}",
+                money_with_currency_format: "Tk {{sf_amount}} BDT",
+            },
+            BSD: {
+                money_format: "BS${{sf_amount}}",
+                money_with_currency_format: "BS${{sf_amount}} BSD",
+            },
+            BHD: {
+                money_format: "{{sf_amount}}0 BD",
+                money_with_currency_format: "{{sf_amount}}0 BHD",
+            },
+            BYR: {
+                money_format: "Br {{sf_amount}}",
+                money_with_currency_format: "Br {{sf_amount}} BYR",
+            },
+            BZD: {
+                money_format: "BZ${{sf_amount}}",
+                money_with_currency_format: "BZ${{sf_amount}} BZD",
+            },
+            BTN: {
+                money_format: "Nu {{sf_amount}}",
+                money_with_currency_format: "Nu {{sf_amount}} BTN",
+            },
+            BAM: {
+                money_format: "KM {{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "KM {{sf_amount_with_comma_separator}} BAM",
+            },
+            BRL: {
+                money_format: "R$ {{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "R$ {{sf_amount_with_comma_separator}} BRL",
+            },
+            BOB: {
+                money_format: "Bs{{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "Bs{{sf_amount_with_comma_separator}} BOB",
+            },
+            BWP: {
+                money_format: "P{{sf_amount}}",
+                money_with_currency_format: "P{{sf_amount}} BWP",
+            },
+            BND: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} BND",
+            },
+            BGN: {
+                money_format: "{{sf_amount}} лв",
+                money_with_currency_format: "{{sf_amount}} лв BGN",
+            },
+            MMK: {
+                money_format: "K{{sf_amount}}",
+                money_with_currency_format: "K{{sf_amount}} MMK",
+            },
+            KHR: {
+                money_format: "KHR{{sf_amount}}",
+                money_with_currency_format: "KHR{{sf_amount}}",
+            },
+            KYD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} KYD",
+            },
+            XAF: {
+                money_format: "FCFA{{sf_amount}}",
+                money_with_currency_format: "FCFA{{sf_amount}} XAF",
+            },
+            CLP: {
+                money_format: "${{sf_amount_no_decimals}}",
+                money_with_currency_format: "${{sf_amount_no_decimals}} CLP",
+            },
+            CNY: {
+                money_format: "&#165;{{sf_amount}}",
+                money_with_currency_format: "&#165;{{sf_amount}} CNY",
+            },
+            COP: {
+                money_format: "${{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "${{sf_amount_with_comma_separator}} COP",
+            },
+            CRC: {
+                money_format: "&#8353; {{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "&#8353; {{sf_amount_with_comma_separator}} CRC",
+            },
+            HRK: {
+                money_format: "{{sf_amount_with_comma_separator}} kn",
+                money_with_currency_format: "{{sf_amount_with_comma_separator}} kn HRK",
+            },
+            CZK: {
+                money_format: "{{sf_amount_with_comma_separator}} K&#269;",
+                money_with_currency_format: "{{sf_amount_with_comma_separator}} K&#269;",
+            },
+            DKK: {
+                money_format: "{{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "kr.{{sf_amount_with_comma_separator}}",
+            },
+            DOP: {
+                money_format: "RD$ {{sf_amount}}",
+                money_with_currency_format: "RD$ {{sf_amount}}",
+            },
+            XCD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "EC${{sf_amount}}",
+            },
+            EGP: {
+                money_format: "LE {{sf_amount}}",
+                money_with_currency_format: "LE {{sf_amount}} EGP",
+            },
+            ETB: {
+                money_format: "Br{{sf_amount}}",
+                money_with_currency_format: "Br{{sf_amount}} ETB",
+            },
+            XPF: {
+                money_format: "{{sf_amount_no_decimals_with_comma_separator}} XPF",
+                money_with_currency_format:
+                "{{sf_amount_no_decimals_with_comma_separator}} XPF",
+            },
+            FJD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "FJ${{sf_amount}}",
+            },
+            GMD: {
+                money_format: "D {{sf_amount}}",
+                money_with_currency_format: "D {{sf_amount}} GMD",
+            },
+            GHS: {
+                money_format: "GH&#8373;{{sf_amount}}",
+                money_with_currency_format: "GH&#8373;{{sf_amount}}",
+            },
+            GTQ: {
+                money_format: "Q{{sf_amount}}",
+                money_with_currency_format: "{{sf_amount}} GTQ",
+            },
+            GYD: {
+                money_format: "G${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} GYD",
+            },
+            GEL: {
+                money_format: "{{sf_amount}} GEL",
+                money_with_currency_format: "{{sf_amount}} GEL",
+            },
+            HNL: {
+                money_format: "L {{sf_amount}}",
+                money_with_currency_format: "L {{sf_amount}} HNL",
+            },
+            HKD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "HK${{sf_amount}}",
+            },
+            HUF: {
+                money_format: "{{sf_amount_no_decimals_with_comma_separator}}",
+                money_with_currency_format:
+                "{{sf_amount_no_decimals_with_comma_separator}} Ft",
+            },
+            ISK: {
+                money_format: "{{sf_amount_no_decimals}} kr",
+                money_with_currency_format: "{{sf_amount_no_decimals}} kr ISK",
+            },
+            INR: {
+                money_format: "Rs. {{sf_amount}}",
+                money_with_currency_format: "Rs. {{sf_amount}}",
+            },
+            IDR: {
+                money_format: "{{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "Rp {{sf_amount_with_comma_separator}}",
+            },
+            ILS: {
+                money_format: "{{sf_amount}} NIS",
+                money_with_currency_format: "{{sf_amount}} NIS",
+            },
+            JMD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} JMD",
+            },
+            JPY: {
+                money_format: "&#165;{{sf_amount_no_decimals}}",
+                money_with_currency_format: "&#165;{{sf_amount_no_decimals}} JPY",
+            },
+            JEP: {
+                money_format: "&pound;{{sf_amount}}",
+                money_with_currency_format: "&pound;{{sf_amount}} JEP",
+            },
+            JOD: {
+                money_format: "{{sf_amount}}0 JD",
+                money_with_currency_format: "{{sf_amount}}0 JOD",
+            },
+            KZT: {
+                money_format: "{{sf_amount}} KZT",
+                money_with_currency_format: "{{sf_amount}} KZT",
+            },
+            KES: {
+                money_format: "KSh{{sf_amount}}",
+                money_with_currency_format: "KSh{{sf_amount}}",
+            },
+            KWD: {
+                money_format: "{{sf_amount}}0 KD",
+                money_with_currency_format: "{{sf_amount}}0 KWD",
+            },
+            KGS: {
+                money_format: "лв{{sf_amount}}",
+                money_with_currency_format: "лв{{sf_amount}}",
+            },
+            LVL: {
+                money_format: "Ls {{sf_amount}}",
+                money_with_currency_format: "Ls {{sf_amount}} LVL",
+            },
+            LBP: {
+                money_format: "L&pound;{{sf_amount}}",
+                money_with_currency_format: "L&pound;{{sf_amount}} LBP",
+            },
+            LTL: {
+                money_format: "{{sf_amount}} Lt",
+                money_with_currency_format: "{{sf_amount}} Lt",
+            },
+            MGA: {
+                money_format: "Ar {{sf_amount}}",
+                money_with_currency_format: "Ar {{sf_amount}} MGA",
+            },
+            MKD: {
+                money_format: "ден {{sf_amount}}",
+                money_with_currency_format: "ден {{sf_amount}} MKD",
+            },
+            MOP: {
+                money_format: "MOP${{sf_amount}}",
+                money_with_currency_format: "MOP${{sf_amount}}",
+            },
+            MVR: {
+                money_format: "Rf{{sf_amount}}",
+                money_with_currency_format: "Rf{{sf_amount}} MRf",
+            },
+            MXN: {
+                money_format: "$ {{sf_amount}}",
+                money_with_currency_format: "$ {{sf_amount}} MXN",
+            },
+            MYR: {
+                money_format: "RM{{sf_amount}} MYR",
+                money_with_currency_format: "RM{{sf_amount}} MYR",
+            },
+            MUR: {
+                money_format: "Rs {{sf_amount}}",
+                money_with_currency_format: "Rs {{sf_amount}} MUR",
+            },
+            MDL: {
+                money_format: "{{sf_amount}} MDL",
+                money_with_currency_format: "{{sf_amount}} MDL",
+            },
+            MAD: {
+                money_format: "{{sf_amount}} dh",
+                money_with_currency_format: "Dh {{sf_amount}} MAD",
+            },
+            MNT: {
+                money_format: "{{sf_amount_no_decimals}} &#8366",
+                money_with_currency_format: "{{sf_amount_no_decimals}} MNT",
+            },
+            MZN: {
+                money_format: "{{sf_amount}} Mt",
+                money_with_currency_format: "Mt {{sf_amount}} MZN",
+            },
+            NAD: {
+                money_format: "N${{sf_amount}}",
+                money_with_currency_format: "N${{sf_amount}} NAD",
+            },
+            NPR: {
+                money_format: "Rs{{sf_amount}}",
+                money_with_currency_format: "Rs{{sf_amount}} NPR",
+            },
+            ANG: {
+                money_format: "&fnof;{{sf_amount}}",
+                money_with_currency_format: "{{sf_amount}} NA&fnof;",
+            },
+            NZD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} NZD",
+            },
+            NIO: {
+                money_format: "C${{sf_amount}}",
+                money_with_currency_format: "C${{sf_amount}} NIO",
+            },
+            NGN: {
+                money_format: "&#8358;{{sf_amount}}",
+                money_with_currency_format: "&#8358;{{sf_amount}} NGN",
+            },
+            NOK: {
+                money_format: "kr {{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "kr {{sf_amount_with_comma_separator}} NOK",
+            },
+            OMR: {
+                money_format: "{{sf_amount_with_comma_separator}} OMR",
+                money_with_currency_format: "{{sf_amount_with_comma_separator}} OMR",
+            },
+            PKR: {
+                money_format: "Rs.{{sf_amount}}",
+                money_with_currency_format: "Rs.{{sf_amount}} PKR",
+            },
+            PGK: {
+                money_format: "K {{sf_amount}}",
+                money_with_currency_format: "K {{sf_amount}} PGK",
+            },
+            PYG: {
+                money_format: "Gs. {{sf_amount_no_decimals_with_comma_separator}}",
+                money_with_currency_format:
+                "Gs. {{sf_amount_no_decimals_with_comma_separator}} PYG",
+            },
+            PEN: {
+                money_format: "S/. {{sf_amount}}",
+                money_with_currency_format: "S/. {{sf_amount}} PEN",
+            },
+            PHP: {
+                money_format: "&#8369;{{sf_amount}}",
+                money_with_currency_format: "&#8369;{{sf_amount}} PHP",
+            },
+            PLN: {
+                money_format: "{{sf_amount_with_comma_separator}} zl",
+                money_with_currency_format: "{{sf_amount_with_comma_separator}} zl PLN",
+            },
+            QAR: {
+                money_format: "QAR {{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "QAR {{sf_amount_with_comma_separator}}",
+            },
+            RON: {
+                money_format: "{{sf_amount_with_comma_separator}} lei",
+                money_with_currency_format: "{{sf_amount_with_comma_separator}} lei RON",
+            },
+            RUB: {
+                money_format: "&#1088;&#1091;&#1073;{{sf_amount_with_comma_separator}}",
+                money_with_currency_format:
+                "&#1088;&#1091;&#1073;{{sf_amount_with_comma_separator}} RUB",
+            },
+            RWF: {
+                money_format: "{{sf_amount_no_decimals}} RF",
+                money_with_currency_format: "{{sf_amount_no_decimals}} RWF",
+            },
+            WST: {
+                money_format: "WS$ {{sf_amount}}",
+                money_with_currency_format: "WS$ {{sf_amount}} WST",
+            },
+            SAR: {
+                money_format: "{{sf_amount}} SR",
+                money_with_currency_format: "{{sf_amount}} SAR",
+            },
+            STD: {
+                money_format: "Db {{sf_amount}}",
+                money_with_currency_format: "Db {{sf_amount}} STD",
+            },
+            RSD: {
+                money_format: "{{sf_amount}} RSD",
+                money_with_currency_format: "{{sf_amount}} RSD",
+            },
+            SCR: {
+                money_format: "Rs {{sf_amount}}",
+                money_with_currency_format: "Rs {{sf_amount}} SCR",
+            },
+            SGD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} SGD",
+            },
+            SYP: {
+                money_format: "S&pound;{{sf_amount}}",
+                money_with_currency_format: "S&pound;{{sf_amount}} SYP",
+            },
+            ZAR: {
+                money_format: "R {{sf_amount}}",
+                money_with_currency_format: "R {{sf_amount}} ZAR",
+            },
+            KRW: {
+                money_format: "&#8361;{{sf_amount_no_decimals}}",
+                money_with_currency_format: "&#8361;{{sf_amount_no_decimals}} KRW",
+            },
+            LKR: {
+                money_format: "Rs {{sf_amount}}",
+                money_with_currency_format: "Rs {{sf_amount}} LKR",
+            },
+            SEK: {
+                money_format: "{{sf_amount_no_decimals}} kr",
+                money_with_currency_format: "{{sf_amount_no_decimals}} kr SEK",
+            },
+            CHF: {
+                money_format: "SFr. {{sf_amount}}",
+                money_with_currency_format: "SFr. {{sf_amount}} CHF",
+            },
+            TWD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} TWD",
+            },
+            THB: {
+                money_format: "{{sf_amount}} &#xe3f;",
+                money_with_currency_format: "{{sf_amount}} &#xe3f; THB",
+            },
+            TZS: {
+                money_format: "{{sf_amount}} TZS",
+                money_with_currency_format: "{{sf_amount}} TZS",
+            },
+            TTD: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}} TTD",
+            },
+            TND: {
+                money_format: "{{sf_amount}}",
+                money_with_currency_format: "{{sf_amount}} DT",
+            },
+            TRY: {
+                money_format: "{{sf_amount}}TL",
+                money_with_currency_format: "{{sf_amount}}TL",
+            },
+            UGX: {
+                money_format: "Ush {{sf_amount_no_decimals}}",
+                money_with_currency_format: "Ush {{sf_amount_no_decimals}} UGX",
+            },
+            UAH: {
+                money_format: "₴{{sf_amount}}",
+                money_with_currency_format: "₴{{sf_amount}} UAH",
+            },
+            AED: {
+                money_format: "Dhs. {{sf_amount}}",
+                money_with_currency_format: "Dhs. {{sf_amount}} AED",
+            },
+            UYU: {
+                money_format: "${{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "${{sf_amount_with_comma_separator}} UYU",
+            },
+            VUV: {
+                money_format: "${{sf_amount}}",
+                money_with_currency_format: "${{sf_amount}}VT",
+            },
+            VEF: {
+                money_format: "Bs. {{sf_amount_with_comma_separator}}",
+                money_with_currency_format: "Bs. {{sf_amount_with_comma_separator}} VEF",
+            },
+            VND: {
+                money_format: "{{sf_amount_no_decimals_with_comma_separator}}&#8363;",
+                money_with_currency_format:
+                "{{sf_amount_no_decimals_with_comma_separator}} VND",
+            },
+            XBT: {
+                money_format: "{{sf_amount_no_decimals}} BTC",
+                money_with_currency_format: "{{sf_amount_no_decimals}} BTC",
+            },
+            XOF: {
+                money_format: "CFA{{sf_amount}}",
+                money_with_currency_format: "CFA{{sf_amount}} XOF",
+            },
+            ZMW: {
+                money_format: "K{{sf_amount_no_decimals_with_comma_separator}}",
+                money_with_currency_format:
+                "ZMW{{sf_amount_no_decimals_with_comma_separator}}",
+            },
+        }
+</script>

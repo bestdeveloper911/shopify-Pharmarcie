@@ -1,0 +1,49 @@
+{% assign filters_type = section.settings.filters_type %}
+{% assign show_filter = section.settings.show_filter %}
+
+{%- assign has_filter = false -%}
+{% if section.blocks.size > 0 %}
+  {%- assign has_filter = true -%}
+{% endif %}
+
+{%- if filters_type == 'storefront_filters' -%}
+  {%- for filter in collection.filters -%}
+    {% if forloop.first %}
+      {% if forloop.length > 0 %}
+        {%- assign has_filter = true -%}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{%- assign position = section.settings.sidebar -%}
+
+{% if show_filter and has_filter %}
+{%- if filters_type == 'storefront_filters' -%}
+  <script src="{{ 'collection-filters-2.0.min.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+<div class="sf__sidebar" data-type="{{ position }}">
+  <div class="sf__sidebar-content">
+    {% if section.settings.sidebar_title != blank %}
+      <h3 class="text-3xl p-5 font-medium {% if position != 'fixed' %}xl:px-0 xl:mb-8 xl:py-0{% endif %}">{{ section.settings.sidebar_title }}</h3>
+    {% endif %}
+    <div class="sf__sidebar-close cursor-pointer absolute top-5 right-5">{% render 'icon', name: 'x', size: 'large' %}</div>
+    <div class="sf__sidebar-wrapper">
+      <div class="sf__filter-wrapper"{%- if filters_type == 'tags_filter' -%} data-filters-block{% endif %}>
+        {%- if filters_type == 'storefront_filters' -%}
+          {% for block in section.blocks %}
+            {% if block.type == 'collections' %}
+                {% render 'widget-collections-list', block: block, title_class: 'text-base font-medium' %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          {% render 'storefront-filters', section: section, has_filter: has_filter %}
+        {% else %}
+          {% render 'filter-by-tags', section: section, has_filter: section.settings.show_filter %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
